@@ -3,35 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Miqyas Platform</title>
-<meta name="description" content="Miqyas is an AI solutions agency building automated assessment-to-report platforms for consulting practices — load any framework, get a finished, data-grounded report in minutes.">
+<title>Rubriq Platform</title>
+<meta name="description" content="Rubriq is an AI solutions agency building automated assessment-to-report platforms for consulting practices — load any framework, get a finished, data-grounded report in minutes.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
 
   :root{
-    --ink:#12194a; --ink-soft:#3a4270; --muted:#6b7290;
-    --brand:#283a80; --brand-d:#161f52; --brand-l:#eef0fb;
-    --accent:#0d9488; --accent-d:#0a6f66; --accent-l:#e3f5f2;
-    --bg:#f6f7fb; --surface:#ffffff; --line:#e4e7f2;
-    --gold:#c8862b;
+    --ink:#262422; --ink-soft:#5b5048; --muted:#8f8177;
+    --brand:#a35a2e; --brand-d:#5c3018; --brand-l:#f5e6d8;
+    --accent:#b98a4e; --accent-d:#8a6335; --accent-l:#f2e8d8;
+    --bg:#faf6f0; --surface:#ffffff; --line:#ece2d4;
+    --gold:#b98a4e;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ink:#eef0fb; --ink-soft:#c7cbe8; --muted:#9aa0c4;
-      --brand:#7c8bea; --brand-d:#aab4f5; --brand-l:#1b2350;
-      --accent:#2dd4c2; --accent-d:#6ee7db; --accent-l:#0f2e2c;
-      --bg:#0c1030; --surface:#12173d; --line:#252d5e;
-      --gold:#e0a94e;
+      --ink:#f3ede4; --ink-soft:#cabbac; --muted:#9c8f80;
+      --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
+      --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
+      --bg:#17130f; --surface:#1f1a14; --line:#352b20;
+      --gold:#d9ae74;
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"]{
-    --ink:#eef0fb; --ink-soft:#c7cbe8; --muted:#9aa0c4;
-    --brand:#7c8bea; --brand-d:#aab4f5; --brand-l:#1b2350;
-    --accent:#2dd4c2; --accent-d:#6ee7db; --accent-l:#0f2e2c;
-    --bg:#0c1030; --surface:#12173d; --line:#252d5e;
-    --gold:#e0a94e;
+    --ink:#f3ede4; --ink-soft:#cabbac; --muted:#9c8f80;
+    --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
+    --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
+    --bg:#17130f; --surface:#1f1a14; --line:#352b20;
+    --gold:#d9ae74;
     color-scheme: dark;
   }
 
@@ -80,7 +80,7 @@
 
   /* ---------- screenshot showcase ---------- */
   .showcase{padding-top:0}
-  .shot-frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(18,25,74,.35);background:var(--surface)}
+  .shot-frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(38,28,18,.35);background:var(--surface)}
   .shot-frame img{width:100%}
 
   /* ---------- problem/solution ---------- */
@@ -113,13 +113,13 @@
   /* ---------- proof strip ---------- */
   .proof{background:var(--brand-d);color:#fff;border-radius:22px;padding:44px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
   @media (max-width:760px){.proof{grid-template-columns:1fr}}
-  .proof .kicker{color:#9fb0f5}
+  .proof .kicker{color:#e8bf94}
   .proof h2{color:#fff;font-size:clamp(22px,3vw,28px);font-weight:600}
-  .proof p{color:#c6cbf2;margin-top:14px;font-size:15px;max-width:46ch}
+  .proof p{color:#e4d2c0;margin-top:14px;font-size:15px;max-width:46ch}
   .proof-facts{display:flex;flex-direction:column;gap:16px}
   .proof-facts div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:14px;font-size:14.5px}
   .proof-facts div b{color:#fff;font-weight:600;text-align:end}
-  .proof-facts div span{color:#a9b0e0}
+  .proof-facts div span{color:#cfa87e}
 
   /* ---------- cta ---------- */
   .cta-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:56px;text-align:center}
@@ -168,7 +168,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span class="mark"></span><span data-i18n="brand">Miqyas</span></div>
+    <div class="brand"><span class="mark"></span><span data-i18n="brand">Rubriq</span></div>
     <div class="nav-right">
       <button class="lang-toggle" id="langBtn" onclick="setLang(currentLang==='en'?'ar':'en')">العربية</button>
       <a class="nav-cta" href="#contact" data-i18n="navCta">Book a call</a>
@@ -180,7 +180,7 @@
   <div class="wrap">
     <span class="eyebrow" data-i18n="eyebrow">Built &amp; already running in production</span>
     <h1 data-i18n="h1">Turn your assessment framework into a self-writing consulting report.</h1>
-    <p class="lede" data-i18n="lede">Miqyas is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.</p>
+    <p class="lede" data-i18n="lede">Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.</p>
     <p class="scope-note" data-i18n="scopeNote">We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#contact" data-i18n="heroBtn1">Book a call →</a>
@@ -380,7 +380,7 @@
 
 <footer>
   <div class="wrap">
-    <span data-i18n="foot1">Miqyas — an AI solutions agency building assessment-to-report platforms for consulting teams.</span>
+    <span data-i18n="foot1">Rubriq — an AI solutions agency building assessment-to-report platforms for consulting teams.</span>
     <span data-i18n="foot2">Case study available on request.</span>
   </div>
 </footer>
@@ -388,11 +388,11 @@
 <script>
   var translations = {
     en: {
-      brand:"Miqyas",
+      brand:"Rubriq",
       navCta:"Book a call",
       eyebrow:"Built & already running in production",
       h1:"Turn your assessment framework into a self-writing consulting report.",
-      lede:"Miqyas is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.",
+      lede:"Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.",
       scopeNote:"We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.",
       heroBtn1:"Book a call →",
       heroBtn2:"See it in action",
@@ -449,16 +449,16 @@
       cfMessagePh:"Message",
       cfSend:"Send message",
       cfNote:"Opens your email app with this pre-filled — nothing is sent without you hitting send.",
-      foot1:"Miqyas — an AI solutions agency building assessment-to-report platforms for consulting teams.",
+      foot1:"Rubriq — an AI solutions agency building assessment-to-report platforms for consulting teams.",
       foot2:"Case study available on request.",
       langBtn:"العربية"
     },
     ar: {
-      brand:"مقياس",
+      brand:"روبريك",
       navCta:"احجز مكالمة",
       eyebrow:"مبني ويعمل فعليًا في الإنتاج",
       h1:"حوّل إطار التقييم لديك إلى تقرير استشاري يُكتب تلقائيًا.",
-      lede:"مقياس وكالة حلول ذكاء اصطناعي تبني منصات تحوّل التقييم إلى تقرير جاهز لصالح الممارسات الاستشارية. أدخل إطارك — تدقيق، مراجعة جودة، معايير اعتماد، أو بطاقة امتثال — ونحوّله من درجات وبيّنات خام إلى تقرير متكامل مبني على البيانات وخطة عمل جاهزة. لا مزيد من الليالي التي تُمضى في كتابة نفس هيكل التقرير يدويًا.",
+      lede:"روبريك وكالة حلول ذكاء اصطناعي تبني منصات تحوّل التقييم إلى تقرير جاهز لصالح الممارسات الاستشارية. أدخل إطارك — تدقيق، مراجعة جودة، معايير اعتماد، أو بطاقة امتثال — ونحوّله من درجات وبيّنات خام إلى تقرير متكامل مبني على البيانات وخطة عمل جاهزة. لا مزيد من الليالي التي تُمضى في كتابة نفس هيكل التقرير يدويًا.",
       scopeNote:"نحن نبني المنصة ونُشغّلها. التقييم والقرارات الاحترافية وعلاقات العملاء تبقى بين يدي فريقك.",
       heroBtn1:"احجز مكالمة ←",
       heroBtn2:"شاهد كيف تعمل",
@@ -515,7 +515,7 @@
       cfMessagePh:"الرسالة",
       cfSend:"إرسال الرسالة",
       cfNote:"سيفتح تطبيق البريد لديك مع تعبئة الرسالة مسبقًا — لن يُرسل شيء دون أن تضغط إرسال بنفسك.",
-      foot1:"مقياس — وكالة حلول ذكاء اصطناعي تبني منصات تحويل التقييم إلى تقرير لفرق الاستشارات.",
+      foot1:"روبريك — وكالة حلول ذكاء اصطناعي تبني منصات تحويل التقييم إلى تقرير لفرق الاستشارات.",
       foot2:"دراسة حالة متاحة عند الطلب.",
       langBtn:"English"
     }
