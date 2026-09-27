@@ -7,7 +7,7 @@
 <meta name="description" content="Rubriq is an AI solutions agency building automated assessment-to-report platforms for consulting practices — load any framework, get a finished, data-grounded report in minutes.">
 <link rel="icon" type="image/png" href="logo-icon.png">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Caveat:wght@500;600;700&display=swap');
 
   :root{
     --ink:#1f1d1a; --ink-soft:#5e5a55; --muted:#9c948a;
@@ -53,7 +53,6 @@
     font-family:'Tajawal',system-ui,sans-serif;
   }
   html[lang="ar"] .eyebrow,html[lang="ar"] .kicker{letter-spacing:0;text-transform:none}
-  html[lang="ar"] .pain-list li::before{content:"–"}
 
   /* ---------- nav ---------- */
   nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -165,13 +164,49 @@
 
   /* ---------- problem/solution ---------- */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-  @media (max-width:760px){.split{grid-template-columns:1fr}}
+  @media (max-width:900px){.split{grid-template-columns:1fr}}
   .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin-bottom:14px}
-  .split h2{font-size:clamp(26px,3.4vw,36px);font-weight:600}
-  .split-body p{color:var(--ink-soft);font-size:16px;margin-top:16px;max-width:48ch}
-  .pain-list{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
-  .pain-list li{display:flex;gap:12px;font-size:15.5px;color:var(--ink-soft)}
-  .pain-list li::before{content:"—";color:var(--muted);flex:none}
+  .kicker-rule{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .kicker-rule .kicker{margin:0;white-space:nowrap}
+  .kicker-rule .rule{flex:1;max-width:140px;height:1px;background:var(--line)}
+  .split h2{font-size:clamp(26px,3.2vw,38px);font-weight:800}
+  .split-body p{color:var(--ink-soft);font-size:16px;max-width:48ch}
+
+  .problem-illustration{position:relative;height:300px;margin-top:56px}
+  @media (max-width:520px){.problem-illustration{height:260px}}
+  .problem-illustration [dir]{direction:ltr}
+  .doc-card{position:absolute;background:#fffdfb;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 45px -22px rgba(38,28,18,.3)}
+  .doc-card-1{width:200px;padding:16px;top:36px;left:0;transform:rotate(-9deg);z-index:1}
+  .doc-card-3{width:190px;padding:16px;top:46px;left:180px;transform:rotate(10deg);z-index:1}
+  .doc-card-2{width:262px;padding:18px;top:0;left:78px;transform:rotate(-1.5deg);z-index:2}
+  .doc-card-head{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+  .doc-card-head .doc-ic{width:18px;height:18px;border-radius:4px;flex:none;display:grid;place-items:center;color:#fff}
+  .doc-card-head b{font-size:12.5px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .doc-card-2 .doc-card-head{justify-content:space-between}
+  .doc-badge{font-size:9px;font-weight:700;color:var(--brand-d);background:var(--brand-l);padding:3px 8px;border-radius:99px;white-space:nowrap}
+  .doc-row{display:flex;align-items:center;gap:8px;margin-top:9px}
+  .doc-skel{flex:1;height:7px;border-radius:4px;background:var(--line)}
+  .doc-chip{width:22px;height:9px;border-radius:4px;flex:none}
+  .doc-chip.c-green{background:var(--sage)}
+  .doc-chip.c-yellow{background:var(--accent)}
+  .doc-chip.c-orange{background:var(--brand)}
+  .doc-chip.c-red{background:#b6543a}
+  .doc-card-3 .doc-title-tilt{font-size:12.5px;font-weight:700;color:var(--ink-soft);transform:rotate(2deg);display:inline-block}
+  .annotation{position:absolute;top:-6px;right:-8px;width:130px;text-align:center;z-index:3}
+  @media (max-width:640px){.annotation{display:none}}
+  .annotation-text{font-family:'Caveat',cursive;font-size:21px;font-weight:600;color:var(--ink-soft);line-height:1.15;display:block;transform:rotate(-2deg)}
+  .annotation svg{color:var(--muted);margin-top:2px}
+  .tick-marks{position:absolute;top:24px;left:-14px;z-index:3;color:var(--brand)}
+
+  .pain-cards{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+  .pain-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .pain-ic{width:42px;height:42px;border-radius:11px;flex:none;display:grid;place-items:center}
+  .pain-ic.orange{background:var(--brand-l);color:var(--brand-d)}
+  .pain-ic.blue{background:color-mix(in srgb, var(--data-blue) 16%, var(--surface));color:var(--data-blue)}
+  .pain-ic.green{background:color-mix(in srgb, var(--sage) 18%, var(--surface));color:var(--sage)}
+  .pain-divider{width:1px;align-self:stretch;background:var(--line);flex:none}
+  .pain-text b{display:block;font-size:15px;font-weight:700;color:var(--ink)}
+  .pain-text span{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
 
   /* ---------- how it works ---------- */
   .section-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:600}
@@ -383,16 +418,68 @@
 <section>
   <div class="wrap split">
     <div>
-      <div class="kicker" data-i18n="problemKicker">The problem</div>
+      <div class="kicker-rule"><span class="kicker" data-i18n="problemKicker">The problem</span><span class="rule"></span></div>
       <h2 data-i18n="problemH2">Structured assessments don't scale past a handful of clients.</h2>
+
+      <div class="problem-illustration" dir="ltr">
+        <svg class="tick-marks" width="20" height="34" viewBox="0 0 20 34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 4l4 4M2 16l5 2M3 28l5-1"/></svg>
+
+        <div class="doc-card doc-card-1">
+          <div class="doc-card-head"><span class="doc-ic" style="background:var(--sage)">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 4h16v16H4z"/></svg>
+          </span><b>Client Scores</b></div>
+          <div class="doc-row"><div class="doc-skel"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-orange"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-green"></div></div>
+        </div>
+
+        <div class="doc-card doc-card-3">
+          <span class="doc-title-tilt">Client Report</span>
+          <div class="doc-row"><div class="doc-skel"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div></div>
+        </div>
+
+        <div class="doc-card doc-card-2">
+          <div class="doc-card-head">
+            <span style="display:flex;align-items:center;gap:8px">
+              <span class="doc-ic" style="background:var(--brand)">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 2h9l3 3v17H6z"/></svg>
+              </span><b>Q3 Assessment</b>
+            </span>
+            <span class="doc-badge">In progress</span>
+          </div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-green"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-yellow"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-orange"></div></div>
+          <div class="doc-row"><div class="doc-skel"></div><div class="doc-chip c-red"></div></div>
+        </div>
+
+        <div class="annotation">
+          <span class="annotation-text" data-i18n="annotationText">Hours of work every week</span>
+          <svg width="60" height="36" viewBox="0 0 60 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M55 4C40 2 15 8 8 30" stroke-linecap="round"/><path d="M3 22l5 8 8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
     </div>
     <div class="split-body">
       <p data-i18n="problemBody">A real evaluation framework — dozens of weighted criteria, maturity or compliance scales, evidence requirements — is genuinely valuable. But every cycle means the same grind: collect scores, chase evidence, and manually write a structured report that reads like a consultant wrote it, one client at a time.</p>
-      <ul class="pain-list">
-        <li data-i18n="pain1">Consultants burn hours per client turning scorecards into narrative reports.</li>
-        <li data-i18n="pain2">Consistency slips — report quality depends on who's writing that week.</li>
-        <li data-i18n="pain3">Scoring stays trapped in spreadsheets nobody outside the team can see.</li>
-      </ul>
+      <div class="pain-cards">
+        <div class="pain-card">
+          <span class="pain-ic orange"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <span class="pain-divider"></span>
+          <div class="pain-text"><b data-i18n="pain1Title">Consultants burn hours per client</b><span data-i18n="pain1Desc">turning scorecards into narrative reports.</span></div>
+        </div>
+        <div class="pain-card">
+          <span class="pain-ic blue"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></span>
+          <span class="pain-divider"></span>
+          <div class="pain-text"><b data-i18n="pain2Title">Consistency slips</b><span data-i18n="pain2Desc">report quality depends on who's writing that week.</span></div>
+        </div>
+        <div class="pain-card">
+          <span class="pain-ic green"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <span class="pain-divider"></span>
+          <div class="pain-text"><b data-i18n="pain3Title">Scoring stays trapped in spreadsheets</b><span data-i18n="pain3Desc">nobody outside the team can see.</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -581,9 +668,13 @@
       problemKicker:"The problem",
       problemH2:"Structured assessments don't scale past a handful of clients.",
       problemBody:"A real evaluation framework — dozens of weighted criteria, maturity or compliance scales, evidence requirements — is genuinely valuable. But every cycle means the same grind: collect scores, chase evidence, and manually write a structured report that reads like a consultant wrote it, one client at a time.",
-      pain1:"Consultants burn hours per client turning scorecards into narrative reports.",
-      pain2:"Consistency slips — report quality depends on who's writing that week.",
-      pain3:"Scoring stays trapped in spreadsheets nobody outside the team can see.",
+      pain1Title:"Consultants burn hours per client",
+      pain1Desc:"turning scorecards into narrative reports.",
+      pain2Title:"Consistency slips",
+      pain2Desc:"report quality depends on who's writing that week.",
+      pain3Title:"Scoring stays trapped in spreadsheets",
+      pain3Desc:"nobody outside the team can see.",
+      annotationText:"Hours of work every week",
       howKicker:"How it works",
       howH2:"One framework in, a finished report out.",
       step1h:"Load your framework", step1p:"Domains, criteria, weights, and a maturity or compliance scale — modeled once, reused every cycle.",
@@ -646,9 +737,13 @@
       problemKicker:"المشكلة",
       problemH2:"التقييمات المنظمة لا تتوسع لتشمل عشرات العملاء.",
       problemBody:"إطار التقييم الحقيقي — عشرات المعايير المرجّحة، ومقاييس نضج أو امتثال، ومتطلبات بيّنات — له قيمة حقيقية فعلاً. لكن كل دورة تعني نفس الروتين المرهق: جمع الدرجات، متابعة البيّنات، وكتابة تقرير منظم يدويًا يبدو وكأن استشاريًا كتبه، لكل عميل على حدة.",
-      pain1:"يقضي الاستشاريون ساعات لكل عميل في تحويل بطاقات الدرجات إلى تقارير سردية.",
-      pain2:"جودة التقرير تتذبذب — تعتمد على من كتبه في ذلك الأسبوع.",
-      pain3:"تبقى الدرجات حبيسة جداول بيانات لا يراها أحد خارج الفريق.",
+      pain1Title:"يقضي الاستشاريون ساعات لكل عميل",
+      pain1Desc:"في تحويل بطاقات الدرجات إلى تقارير سردية.",
+      pain2Title:"جودة التقرير تتذبذب",
+      pain2Desc:"تعتمد على من كتبه في ذلك الأسبوع.",
+      pain3Title:"تبقى الدرجات حبيسة جداول بيانات",
+      pain3Desc:"لا يراها أحد خارج الفريق.",
+      annotationText:"ساعات من العمل كل أسبوع",
       howKicker:"كيف تعمل",
       howH2:"إطار تقييم واحد يدخل، تقرير جاهز يخرج.",
       step1h:"حمّل إطارك", step1p:"المجالات والمعايير والأوزان ومقياس التقييم — يُبنى مرة واحدة ويُعاد استخدامه كل دورة.",
