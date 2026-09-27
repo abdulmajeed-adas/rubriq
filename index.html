@@ -7,14 +7,14 @@
 <meta name="description" content="Rubriq is an AI solutions agency building automated assessment-to-report platforms for consulting practices — load any framework, get a finished, data-grounded report in minutes.">
 <link rel="icon" type="image/png" href="logo-icon.png">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
 
   :root{
-    --ink:#262422; --ink-soft:#5b5048; --muted:#8f8177;
-    --brand:#a35a2e; --brand-d:#5c3018; --brand-l:#f5e6d8;
-    --accent:#b98a4e; --accent-d:#8a6335; --accent-l:#f2e8d8;
-    --bg:#faf6f0; --surface:#ffffff; --line:#ece2d4;
-    --gold:#b98a4e;
+    --ink:#1f1d1a; --ink-soft:#5e5a55; --muted:#9c948a;
+    --brand:#c67b49; --brand-d:#a85c2f; --brand-l:#f3e2d2;
+    --accent:#d8b594; --accent-d:#a85c2f; --accent-l:#e7d8c8;
+    --bg:#fcf8f4; --surface:#f4ece3; --line:#e7d8c8;
+    --gold:#c67b49; --data-blue:#4e6f8e; --sage:#74826a;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
@@ -23,7 +23,7 @@
       --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
       --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
       --bg:#17130f; --surface:#1f1a14; --line:#352b20;
-      --gold:#d9ae74;
+      --gold:#d9ae74; --data-blue:#7ca0c2; --sage:#9db08e;
       color-scheme: dark;
     }
   }
@@ -32,16 +32,17 @@
     --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
     --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
     --bg:#17130f; --surface:#1f1a14; --line:#352b20;
-    --gold:#d9ae74;
+    --gold:#d9ae74; --data-blue:#7ca0c2; --sage:#9db08e;
     color-scheme: dark;
   }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
-  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);margin:0;text-wrap:balance}
+  h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;font-weight:800;color:var(--ink);margin:0;text-wrap:balance;letter-spacing:-.01em}
   p{margin:0}
   .wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+  .wrap-wide{max-width:1280px;margin:0 auto;padding-inline:24px}
   section{padding-block:88px}
   @media (max-width:640px){section{padding-block:56px}}
 
@@ -55,29 +56,110 @@
   html[lang="ar"] .pain-list li::before{content:"–"}
 
   /* ---------- nav ---------- */
-  nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:16px;gap:14px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--ink)}
+  nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;padding-block:18px;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-weight:800;font-size:20px;color:var(--ink);flex:none}
   .brand .mark{width:32px;height:32px;object-fit:contain;flex:none}
-  .nav-right{display:flex;align-items:center;gap:12px}
-  .nav-cta{font:inherit;font-weight:700;font-size:14px;color:#fff;background:var(--brand);border:none;padding:10px 20px;border-radius:999px;cursor:pointer;text-decoration:none;white-space:nowrap}
-  .lang-toggle{font:inherit;font-weight:700;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
-  .lang-toggle:hover{border-color:var(--brand)}
+  .nav-links{flex:1;display:flex;justify-content:center;align-items:center;gap:32px}
+  .nav-links a{display:inline-flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:var(--ink-soft);text-decoration:none}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a svg{opacity:.55}
+  @media (max-width:900px){.nav-links{display:none}}
+  .nav-right{display:flex;align-items:center;gap:18px;flex:none}
+  .nav-cta{font:inherit;font-weight:700;font-size:14.5px;color:#fff;background:var(--brand);border:none;padding:12px 22px;border-radius:10px;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+  .lang-toggle{font:inherit;font-weight:600;font-size:14.5px;color:var(--ink-soft);background:none;border:none;padding:6px 4px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+  .lang-toggle:hover{color:var(--ink)}
 
   /* ---------- hero ---------- */
-  .hero{padding-block:72px 40px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);background:var(--accent-l);padding:7px 14px;border-radius:999px;margin-bottom:22px}
-  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
-  .hero h1{font-size:clamp(34px,5.2vw,58px);font-weight:600;letter-spacing:-.01em;max-width:16ch}
-  .hero .lede{margin-top:22px;font-size:19px;color:var(--ink-soft);max-width:58ch}
-  .hero .scope-note{margin-top:14px;font-size:14px;color:var(--muted);max-width:58ch}
+  .hero{padding-block:56px 220px;overflow:hidden}
+  @media (max-width:960px){.hero{padding-block:40px 60px}}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media (max-width:960px){.hero-grid{grid-template-columns:1fr}}
+  .eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-d);margin-bottom:20px}
+  .hero h1{font-size:clamp(32px,3.2vw,46px);font-weight:800;letter-spacing:-.01em;max-width:15ch}
+  .hero .lede{margin-top:22px;font-size:17px;color:var(--ink-soft);max-width:52ch}
+  .hero .scope-note{margin-top:14px;font-size:14px;color:var(--muted);max-width:52ch}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
   .btn-primary,.btn-ghost{font:inherit;font-weight:700;font-size:15px;padding:14px 26px;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
   .btn-primary{background:var(--brand);color:#fff;border:1px solid var(--brand)}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:56px;padding-top:32px;border-top:1px solid var(--line)}
-  .hero-stats div b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--ink)}
-  .hero-stats div span{font-size:13px;color:var(--muted)}
+  .hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+  .hero-stats div b{display:block;font-family:'Manrope',sans-serif;font-weight:800;font-size:24px;color:var(--ink)}
+  .hero-stats div span{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- hero dashboard illustration ---------- */
+  .hero-visual{position:relative;min-height:420px}
+  @media (max-width:960px){.hero-visual{margin-top:40px;min-height:0}}
+  .deco-tri{position:absolute;z-index:0;opacity:.55}
+  .deco-tri-1{width:220px;height:220px;background:var(--accent);clip-path:polygon(0 100%,100% 100%,50% 0);top:-60px;right:60px;opacity:.35}
+  .deco-tri-2{width:160px;height:160px;background:var(--brand-l);clip-path:polygon(0 0,100% 0,0 100%);bottom:-40px;left:-40px;opacity:.6}
+  .dash-card{background:#fffdfb;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -24px rgba(38,28,18,.28)}
+  .dash-main{position:relative;z-index:1;padding:18px}
+  @media (max-width:960px){.dash-main{max-width:640px;margin-inline:auto}}
+  .dash-topbar{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .dash-brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:var(--ink)}
+  .dash-brand img{width:20px;height:20px;object-fit:contain}
+  .dash-topbar-icons{display:flex;align-items:center;gap:14px;color:var(--muted)}
+  .dash-avatar{width:26px;height:26px;border-radius:50%;background:var(--brand-l);color:var(--brand-d);font-size:11px;font-weight:700;display:grid;place-items:center}
+  .dash-body{display:flex;gap:18px}
+  .dash-sidebar{flex:none;width:120px;display:flex;flex-direction:column;gap:2px}
+  @media (max-width:640px){.dash-sidebar{display:none}}
+  .dash-nav-item{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:8px 10px;border-radius:8px}
+  .dash-nav-item .dot{width:6px;height:6px;border-radius:2px;background:var(--muted);flex:none}
+  .dash-nav-item.active{background:var(--brand-l);color:var(--brand-d)}
+  .dash-nav-item.active .dot{background:var(--brand-d)}
+  .dash-main-panel{flex:1;min-width:0}
+  .dash-panel-head h4{font-size:14.5px;font-weight:800;color:var(--ink);margin:0}
+  .dash-panel-head span{font-size:11px;color:var(--muted)}
+  .dash-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  @media (max-width:640px){.dash-stat-row{grid-template-columns:1fr}}
+  .dash-stat-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .dash-stat-card>span{font-size:10.5px;color:var(--muted);display:block}
+  .dash-stat-card b{font-size:19px;font-weight:800;color:var(--ink);display:block;margin-top:4px}
+  .dash-stat-card b.small{font-size:13px}
+  .dash-stat-card b i{font-size:11px;font-weight:600;color:var(--muted);font-style:normal}
+  .dash-bar{height:5px;background:var(--line);border-radius:99px;margin-top:8px;overflow:hidden}
+  .dash-bar-fill{height:100%;background:var(--brand);border-radius:99px}
+  .dash-stat-card.center{display:flex;flex-direction:column;align-items:flex-start}
+  .dash-ring{width:34px;height:34px;border-radius:50%;border:4px solid var(--sage);display:grid;place-items:center;font-size:8.5px;font-weight:800;color:var(--sage);margin-top:6px}
+  .dash-minibars{display:flex;align-items:flex-end;gap:3px;height:22px;margin-top:8px}
+  .dash-minibars i{flex:1;background:var(--sage);border-radius:2px;display:block}
+  .dash-lower-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  @media (max-width:640px){.dash-lower-row{grid-template-columns:1fr}}
+  .dash-radar-card,.dash-evidence-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .dash-radar-card>span,.dash-evidence-card>span{font-size:11px;font-weight:700;color:var(--ink);display:block;margin-bottom:6px}
+  .radar-legend{display:flex;gap:10px;font-size:9px;color:var(--muted);margin-top:4px}
+  .radar-legend span{display:inline-flex;align-items:center;gap:4px}
+  .radar-legend .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .radar-legend .dot.brand{background:var(--brand)}
+  .radar-legend .dot.blue{background:var(--data-blue)}
+  .evidence-row{display:flex;gap:8px;padding-block:7px;border-top:1px solid var(--line)}
+  .evidence-row:first-of-type{border-top:none}
+  .evidence-row .ev-ic{width:20px;height:20px;border-radius:6px;background:var(--brand-l);flex:none}
+  .evidence-row p{font-size:10.5px;color:var(--ink-soft);margin:0;line-height:1.4}
+  .evidence-row small{font-size:9px;color:var(--muted)}
+  .dash-report{position:absolute;z-index:2;width:230px;left:-10px;bottom:-190px;padding:16px}
+  .dash-devplan{position:absolute;z-index:3;width:250px;right:-10px;bottom:-210px;padding:16px}
+  @media (max-width:960px){
+    .dash-report,.dash-devplan{position:static;width:100%;max-width:480px;margin:16px auto 0}
+  }
+  .dash-report-top{display:flex;align-items:center;justify-content:space-between}
+  .dash-tag{font-size:8.5px;font-weight:800;letter-spacing:.08em;color:var(--muted)}
+  .dash-report h5{font-size:15px;font-weight:800;color:var(--ink);margin:10px 0 2px}
+  .dash-report>p{font-size:11px;color:var(--muted);margin:0}
+  .dash-report-img{margin-top:12px;height:70px;border-radius:8px;background:linear-gradient(135deg,var(--brand-l),var(--brand) 60%,var(--brand-d))}
+  .dash-report-meta{display:flex;justify-content:space-between;gap:8px;margin-top:12px}
+  .dash-report-meta div{flex:1;min-width:0}
+  .dash-report-meta div b{display:block;font-size:15px;font-weight:800;color:var(--ink)}
+  .dash-report-meta div span{font-size:9px;color:var(--muted);display:block;line-height:1.3}
+  .dash-devplan-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .dash-devplan-head h5{font-size:14px;font-weight:800;color:var(--ink);margin:0}
+  .dash-devplan-head span{font-size:9.5px;color:var(--muted)}
+  .dash-devplan-item{display:flex;gap:8px;align-items:flex-start;padding-block:8px;border-top:1px solid var(--line)}
+  .dash-devplan-item:first-of-type{border-top:none}
+  .dash-devplan-item .ic{width:22px;height:22px;border-radius:6px;background:var(--brand-l);color:var(--brand-d);display:grid;place-items:center;flex:none}
+  .dash-devplan-item b{display:block;font-size:11px;font-weight:700;color:var(--ink)}
+  .dash-devplan-item small{font-size:9.5px;color:var(--muted)}
 
   /* ---------- screenshot showcase ---------- */
   .showcase{padding-top:0}
@@ -99,7 +181,7 @@
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:48px}
   @media (max-width:760px){.steps{grid-template-columns:1fr}}
   .step{background:var(--surface);padding:30px 26px}
-  .step .num{font-family:'Fraunces',serif;font-size:15px;color:var(--accent-d);font-weight:600;margin-bottom:14px}
+  .step .num{font-family:'Manrope',sans-serif;font-size:15px;color:var(--accent-d);font-weight:700;margin-bottom:14px}
   .step h3{font-size:17px;font-weight:600;margin-bottom:8px}
   .step p{font-size:14px;color:var(--muted)}
 
@@ -168,29 +250,142 @@
 <body>
 
 <nav>
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="brand"><img class="mark" src="logo-icon.png" alt="Rubriq logo"><span data-i18n="brand">Rubriq</span></div>
+    <div class="nav-links">
+      <a href="#showcase" data-i18n="navProduct">Product<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+      <a href="#ships" data-i18n="navSolutions">Solutions<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+      <a href="#contact" data-i18n="navPricing">Pricing</a>
+      <a href="#proof" data-i18n="navResources">Resources<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+    </div>
     <div class="nav-right">
-      <button class="lang-toggle" id="langBtn" onclick="setLang(currentLang==='en'?'ar':'en')">العربية</button>
-      <a class="nav-cta" href="#contact" data-i18n="navCta">Book a call</a>
+      <button class="lang-toggle" id="langBtn" onclick="setLang(currentLang==='en'?'ar':'en')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        <span id="langBtnText">العربية</span>
+      </button>
+      <a class="nav-cta" href="#contact" data-i18n="navCta">Book a call<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow" data-i18n="eyebrow">Built &amp; already running in production</span>
-    <h1 data-i18n="h1">Turn your assessment framework into a self-writing consulting report.</h1>
-    <p class="lede" data-i18n="lede">Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.</p>
-    <p class="scope-note" data-i18n="scopeNote">We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="#contact" data-i18n="heroBtn1">Book a call →</a>
-      <a class="btn-ghost" href="#showcase" data-i18n="heroBtn2">See it in action</a>
+  <div class="wrap-wide hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="eyebrow">Assess / Analyze / Develop</span>
+      <h1 data-i18n="h1">Turn any rubric into a self-writing report.</h1>
+      <p class="lede" data-i18n="lede">Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.</p>
+      <p class="scope-note" data-i18n="scopeNote">We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contact" data-i18n="heroBtn1">Book a call →</a>
+        <a class="btn-ghost" href="#showcase" data-i18n="heroBtn2">See it in action</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>54</b><span data-i18n="stat1">indicators modeled</span></div>
+        <div><b>3</b><span data-i18n="stat2">weighted domains</span></div>
+        <div><b data-i18n="stat3num">&lt;5 min</b><span data-i18n="stat3">score to report draft</span></div>
+        <div><b>100%</b><span data-i18n="stat4">grounded in your data</span></div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div><b>54</b><span data-i18n="stat1">indicators handled in a real, live deployment</span></div>
-      <div><b>3</b><span data-i18n="stat2">weighted domains — configurable to any framework</span></div>
-      <div><b data-i18n="stat3num">&lt;5 min</b><span data-i18n="stat3">from submitted scores to full report draft</span></div>
+
+    <div class="hero-visual" dir="ltr">
+      <div class="deco-tri deco-tri-1"></div>
+      <div class="deco-tri deco-tri-2"></div>
+
+      <div class="dash-card dash-main">
+        <div class="dash-topbar">
+          <div class="dash-brand"><img src="logo-icon.png" alt=""><span>Rubriq</span></div>
+          <div class="dash-topbar-icons">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="dash-avatar">RB</span>
+          </div>
+        </div>
+        <div class="dash-body">
+          <div class="dash-sidebar">
+            <div class="dash-nav-item active"><span class="dot"></span>Home</div>
+            <div class="dash-nav-item"><span class="dot"></span>Assessments</div>
+            <div class="dash-nav-item"><span class="dot"></span>Rubrics</div>
+            <div class="dash-nav-item"><span class="dot"></span>People</div>
+            <div class="dash-nav-item"><span class="dot"></span>Reports</div>
+            <div class="dash-nav-item"><span class="dot"></span>Development</div>
+            <div class="dash-nav-item"><span class="dot"></span>Insights</div>
+          </div>
+          <div class="dash-main-panel">
+            <div class="dash-panel-head">
+              <h4>Sample Leadership Assessment</h4>
+              <span>Illustrative data — not a real client</span>
+            </div>
+            <div class="dash-stat-row">
+              <div class="dash-stat-card">
+                <span>Overall Score</span>
+                <b>4.2<i>/5</i></b>
+                <div class="dash-bar"><div class="dash-bar-fill" style="width:84%"></div></div>
+              </div>
+              <div class="dash-stat-card center">
+                <span>Completed</span>
+                <b>142/142</b>
+                <div class="dash-ring">100%</div>
+              </div>
+              <div class="dash-stat-card">
+                <span>Key Strength</span>
+                <b class="small">Strategic Thinking</b>
+                <div class="dash-minibars"><i style="height:35%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:95%"></i></div>
+              </div>
+            </div>
+            <div class="dash-lower-row">
+              <div class="dash-radar-card">
+                <span>Rubric Performance</span>
+                <svg viewBox="0 0 140 120" width="100%" height="70">
+                  <polygon points="70,10 125,45 105,105 35,105 15,45" fill="none" stroke="var(--line)" stroke-width="1"/>
+                  <polygon points="70,35 105,55 92,90 48,90 35,55" fill="none" stroke="var(--line)" stroke-width="1"/>
+                  <polygon points="70,20 110,48 88,98 42,96 28,50" fill="var(--data-blue)" fill-opacity="0.18" stroke="var(--data-blue)" stroke-width="1.5"/>
+                  <polygon points="70,25 100,50 85,92 50,90 38,52" fill="var(--brand)" fill-opacity="0.28" stroke="var(--brand)" stroke-width="1.5"/>
+                </svg>
+                <div class="radar-legend"><span><i class="dot brand"></i>Your org</span><span><i class="dot blue"></i>Benchmark</span></div>
+              </div>
+              <div class="dash-evidence-card">
+                <span>Evidence Highlights</span>
+                <div class="evidence-row"><div class="ev-ic"></div><div><p>"Demonstrates systems thinking in complex situations."</p><small>Project Review</small></div></div>
+                <div class="evidence-row"><div class="ev-ic"></div><div><p>"Leads cross-functional teams effectively."</p><small>360° Feedback</small></div></div>
+                <div class="evidence-row"><div class="ev-ic"></div><div><p>"Clear, data-driven decision making."</p><small>Manager Assessment</small></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card dash-report">
+        <div class="dash-report-top">
+          <div class="dash-brand" style="font-size:12px"><img src="logo-icon.png" alt="" style="width:16px;height:16px"><span>Rubriq</span></div>
+          <span class="dash-tag">SAMPLE</span>
+        </div>
+        <h5>Leadership Assessment Report</h5>
+        <p>Evidence-based insights for continued growth</p>
+        <div class="dash-report-img"></div>
+        <div class="dash-report-meta">
+          <div><b>142</b><span>Participants</span></div>
+          <div><b>5</b><span>Competencies</span></div>
+          <div><b>12</b><span>Recommendations</span></div>
+        </div>
+      </div>
+
+      <div class="dash-card dash-devplan">
+        <div class="dash-devplan-head">
+          <div><h5>Development Plan</h5><span>3 focus areas · 12 months</span></div>
+        </div>
+        <div class="dash-devplan-item">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div><b>Strategic Thinking</b><small>Build systems-level analysis skills</small></div>
+        </div>
+        <div class="dash-devplan-item">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><circle cx="18" cy="9" r="2.5"/><path d="M16 20c0-2.5 1.5-4 4-4"/></svg></span>
+          <div><b>Influence &amp; Communication</b><small>Increase executive stakeholder engagement</small></div>
+        </div>
+        <div class="dash-devplan-item">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10c1 1 1.5 2 1.5 3h5c0-1 .5-2 1.5-3a6 6 0 0 0-4-10Z"/></svg></span>
+          <div><b>Innovation</b><small>Apply design thinking to key projects</small></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -257,7 +452,7 @@
   </div>
 </section>
 
-<section>
+<section id="ships">
   <div class="wrap">
     <div class="kicker" data-i18n="shipsKicker">What ships with it</div>
     <h2 class="section-head" data-i18n="shipsH2" style="font-weight:600">Everything past the scoring form.</h2>
@@ -308,7 +503,7 @@
   </div>
 </section>
 
-<section>
+<section id="proof">
   <div class="wrap">
     <div class="proof">
       <div>
@@ -390,17 +585,22 @@
   var translations = {
     en: {
       brand:"Rubriq",
+      navProduct:"Product",
+      navSolutions:"Solutions",
+      navPricing:"Pricing",
+      navResources:"Resources",
       navCta:"Book a call",
-      eyebrow:"Built & already running in production",
-      h1:"Turn your assessment framework into a self-writing consulting report.",
+      eyebrow:"Assess / Analyze / Develop",
+      h1:"Turn any rubric into a self-writing report.",
       lede:"Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.",
       scopeNote:"We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.",
       heroBtn1:"Book a call →",
       heroBtn2:"See it in action",
-      stat1:"indicators handled in a real, live deployment",
-      stat2:"weighted domains — configurable to any framework",
+      stat1:"indicators modeled",
+      stat2:"weighted domains",
       stat3num:"<5 min",
-      stat3:"from submitted scores to full report draft",
+      stat3:"score to report draft",
+      stat4:"grounded in your data",
       shot1Alt:"Auto-generated report page showing a weighted domain score with per-criterion breakdown bars",
       problemKicker:"The problem",
       problemH2:"Structured assessments don't scale past a handful of clients.",
@@ -456,17 +656,22 @@
     },
     ar: {
       brand:"روبريك",
+      navProduct:"المنتج",
+      navSolutions:"الحلول",
+      navPricing:"الأسعار",
+      navResources:"الموارد",
       navCta:"احجز مكالمة",
-      eyebrow:"مبني ويعمل فعليًا في الإنتاج",
-      h1:"حوّل إطار التقييم لديك إلى تقرير استشاري يُكتب تلقائيًا.",
+      eyebrow:"تقييم / تحليل / تطوير",
+      h1:"حوّل أي إطار تقييم إلى تقرير يُكتب تلقائيًا.",
       lede:"روبريك وكالة حلول ذكاء اصطناعي تبني منصات تحوّل التقييم إلى تقرير جاهز لصالح الممارسات الاستشارية. أدخل إطارك — تدقيق، مراجعة جودة، معايير اعتماد، أو بطاقة امتثال — ونحوّله من درجات وبيّنات خام إلى تقرير متكامل مبني على البيانات وخطة عمل جاهزة. لا مزيد من الليالي التي تُمضى في كتابة نفس هيكل التقرير يدويًا.",
       scopeNote:"نحن نبني المنصة ونُشغّلها. التقييم والقرارات الاحترافية وعلاقات العملاء تبقى بين يدي فريقك.",
       heroBtn1:"احجز مكالمة ←",
       heroBtn2:"شاهد كيف تعمل",
-      stat1:"مؤشرًا تمت إدارتها في نشر حقيقي وفعلي",
-      stat2:"مجالات مرجّحة — قابلة للتخصيص الكامل لأي إطار",
+      stat1:"مؤشرًا مُصمّمًا",
+      stat2:"مجالات مرجّحة",
       stat3num:"أقل من 5 دقائق",
-      stat3:"من إدخال الدرجات إلى مسودة تقرير كاملة",
+      stat3:"من الدرجات إلى مسودة التقرير",
+      stat4:"مبني على بياناتك",
       shot1Alt:"صفحة تقرير مولّدة تلقائيًا تعرض درجة مجال مرجّح مع أشرطة تفصيلية لكل معيار",
       problemKicker:"المشكلة",
       problemH2:"التقييمات المنظمة لا تتوسع لتشمل عشرات العملاء.",
@@ -540,7 +745,7 @@
       var key = el.getAttribute('data-i18n-ph');
       if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
     });
-    document.getElementById('langBtn').textContent = t.langBtn;
+    document.getElementById('langBtnText').textContent = t.langBtn;
     try{ localStorage.setItem('miqyas-lang', lang); }catch(e){}
     if (typeof renderBooking === 'function') renderBooking();
     if (typeof selectedSlot !== 'undefined' && selectedSlot) showBookForm();
