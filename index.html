@@ -17,24 +17,6 @@
     --gold:#c67b49; --data-blue:#4e6f8e; --sage:#74826a;
     color-scheme: light;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --ink:#f3ede4; --ink-soft:#cabbac; --muted:#9c8f80;
-      --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
-      --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
-      --bg:#17130f; --surface:#1f1a14; --line:#352b20;
-      --gold:#d9ae74; --data-blue:#7ca0c2; --sage:#9db08e;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --ink:#f3ede4; --ink-soft:#cabbac; --muted:#9c8f80;
-    --brand:#d98a52; --brand-d:#3a2214; --brand-l:#3d2a1c;
-    --accent:#d9ae74; --accent-d:#e9c68f; --accent-l:#332a1e;
-    --bg:#17130f; --surface:#1f1a14; --line:#352b20;
-    --gold:#d9ae74; --data-blue:#7ca0c2; --sage:#9db08e;
-    color-scheme: dark;
-  }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}

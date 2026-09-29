@@ -29,7 +29,8 @@ and a finished, data-grounded narrative report plus an action plan comes out.
 - Local preview: serve the folder with a tiny Node `http.createServer` static server, then check it with Playwright.
 
 ## Design system
-Colors are CSS variables on `:root`, taken from the owner's brand palette. There is also a dark-mode block.
+Colors are CSS variables on `:root`, taken from the owner's brand palette. The site is light-only: the dark-mode
+block was removed on purpose (Sept 29, 2026) because the illustrations hardcode light card backgrounds. Don't add it back.
 
 | Token | Hex | Palette name |
 |---|---|---|
