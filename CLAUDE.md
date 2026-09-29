@@ -61,9 +61,11 @@ Typography:
 2. **Hero**: a two-column grid.
    - Left: eyebrow "Assess / Analyze / Develop", the headline "Turn any rubric into a self-writing report.",
      the lede, a scope note, and two buttons.
-   - Right: a hand-built CSS dashboard illustration with a sidebar, stat cards, radar chart, evidence list,
-     and two overlapping cards ("Leadership Assessment Report", "Development Plan"). The data in it is
-     labeled illustrative.
+   - Right: the big card is an HTML/CSS copy of the platform's report-generation page (`.rg` classes): a toolbar,
+     a cover, the Domain 1 banner, the overall score, and component bars. It replaced a dashboard on Sept 29, 2026,
+     because the platform has no dashboard. The cover's mountain photo is cropped from `rubriq-report-mockup-hq.jpg`
+     with a CSS mask. Cover sizes use `cqw` units so the text stays aligned with the photo. Two small cards
+     ("Leadership Assessment Report", "Development Plan") overlap its bottom.
    - The hero is tuned to fit a roughly 900px viewport without the next section peeking in. The settings are
      `.hero` padding-bottom 220px and `.hero-copy { transform: translateY(40px) }`.
 3. **The problem**:

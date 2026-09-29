@@ -73,51 +73,59 @@
   .deco-tri-1{width:180px;height:180px;background:var(--accent);clip-path:polygon(0 100%,100% 100%,50% 0);top:-45px;right:60px;opacity:.35}
   .deco-tri-2{width:135px;height:135px;background:var(--brand-l);clip-path:polygon(0 0,100% 0,0 100%);bottom:-34px;left:-34px;opacity:.6}
   .dash-card{background:#fffdfb;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -24px rgba(38,28,18,.28)}
-  .dash-main{position:relative;z-index:1;padding:16px}
+  .dash-main{position:relative;z-index:1}
   @media (max-width:960px){.dash-main{max-width:640px;margin-inline:auto}}
-  .dash-topbar{display:flex;align-items:center;justify-content:space-between;padding-bottom:11px;border-bottom:1px solid var(--line);margin-bottom:11px}
   .dash-brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px;color:var(--ink)}
   .dash-brand img{width:20px;height:20px;object-fit:contain}
-  .dash-topbar-icons{display:flex;align-items:center;gap:13px;color:var(--muted)}
-  .dash-avatar{width:25px;height:25px;border-radius:50%;background:var(--brand-l);color:var(--brand-d);font-size:10.5px;font-weight:700;display:grid;place-items:center}
-  .dash-body{display:flex;gap:16px}
-  .dash-sidebar{flex:none;width:114px;display:flex;flex-direction:column;gap:2px}
-  @media (max-width:640px){.dash-sidebar{display:none}}
-  .dash-nav-item{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:7px 9px;border-radius:7px}
-  .dash-nav-item .dot{width:5px;height:5px;border-radius:2px;background:var(--muted);flex:none}
-  .dash-nav-item.active{background:var(--brand-l);color:var(--brand-d)}
-  .dash-nav-item.active .dot{background:var(--brand-d)}
-  .dash-main-panel{flex:1;min-width:0}
-  .dash-panel-head h4{font-size:14.5px;font-weight:800;color:var(--ink);margin:0}
-  .dash-panel-head span{font-size:11px;color:var(--muted)}
-  .dash-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:11px}
-  @media (max-width:640px){.dash-stat-row{grid-template-columns:1fr}}
-  .dash-stat-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px}
-  .dash-stat-card>span{font-size:10.5px;color:var(--muted);display:block}
-  .dash-stat-card b{font-size:18px;font-weight:800;color:var(--ink);display:block;margin-top:4px}
-  .dash-stat-card b.small{font-size:13.5px}
-  .dash-stat-card b i{font-size:11px;font-weight:600;color:var(--muted);font-style:normal}
-  .dash-bar{height:5px;background:var(--line);border-radius:99px;margin-top:6px;overflow:hidden}
-  .dash-bar-fill{height:100%;background:var(--brand);border-radius:99px}
-  .dash-stat-card.center{display:flex;flex-direction:column;align-items:flex-start}
-  .dash-ring{width:29px;height:29px;border-radius:50%;border:3px solid var(--sage);display:grid;place-items:center;font-size:8px;font-weight:800;color:var(--sage);margin-top:5px}
-  .dash-minibars{display:flex;align-items:flex-end;gap:3px;height:19px;margin-top:6px}
-  .dash-minibars i{flex:1;background:var(--sage);border-radius:2px;display:block}
-  .dash-lower-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}
-  @media (max-width:640px){.dash-lower-row{grid-template-columns:1fr}}
-  .dash-radar-card,.dash-evidence-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px}
-  .dash-radar-card>span,.dash-evidence-card>span{font-size:11px;font-weight:700;color:var(--ink);display:block;margin-bottom:5px}
-  .radar-legend{display:flex;gap:9px;font-size:8.5px;color:var(--muted);margin-top:3px}
-  .radar-legend span{display:inline-flex;align-items:center;gap:4px}
-  .radar-legend .dot{width:5px;height:5px;border-radius:50%;display:inline-block}
-  .radar-legend .dot.brand{background:var(--brand)}
-  .radar-legend .dot.blue{background:var(--data-blue)}
-  .evidence-row{display:flex;gap:8px;padding-block:6px;border-top:1px solid var(--line)}
-  .evidence-row:first-of-type{border-top:none}
-  .evidence-row .ev-ic{width:18px;height:18px;border-radius:5px;background:var(--brand-l);flex:none}
-  .evidence-row p{font-size:10.5px;color:var(--ink-soft);margin:0;line-height:1.35}
-  .evidence-row small{font-size:8.5px;color:var(--muted)}
-  .dash-report{position:absolute;z-index:2;width:218px;left:-10px;bottom:-122px;padding:14px}
+
+  /* report-generation page (big hero card); cover sizes use cqw so they track the photo crop */
+  .rg{overflow:hidden;container-type:inline-size}
+  .rg-toolbar{display:flex;align-items:center;gap:4px;padding:6px 7px;border-bottom:1px solid var(--line);background:#fff}
+  .rg-close{display:grid;place-items:center;color:var(--ink-soft);padding:0 4px;flex:none}
+  .rg-btn{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:600;line-height:1;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:5px;padding:5px 6px;white-space:nowrap;flex:none}
+  .rg-btn svg{flex:none}
+  .rg-btn.primary{background:#b8633a;border-color:#b8633a;color:#fff}
+  .rg-btn.soft{background:var(--surface)}
+  .rg-btn.soft svg{color:#c0643a}
+  .rg-btn.icon{padding:4px 5px;color:var(--ink-soft)}
+  .rg-doc-title{margin-inline-start:auto;padding-inline-start:7px;border-inline-start:1px solid var(--line);font-size:9px;font-weight:800;white-space:nowrap}
+  @container (max-width:560px){.rg-hide-md{display:none}}
+  @container (max-width:430px){.rg-hide-sm{display:none}}
+  @container (max-width:370px){.rg-hide-xs{display:none}}
+  .rg-cover{position:relative;aspect-ratio:1536/488;background:#f7f2ed;overflow:hidden}
+  .rg-photo{position:absolute;inset:0;background:url(rubriq-report-mockup-hq.jpg) no-repeat 0 13.99%/100% auto;
+    -webkit-mask-image:linear-gradient(90deg,transparent 47%,#000 57%);mask-image:linear-gradient(90deg,transparent 47%,#000 57%)}
+  .rg-cover-copy{position:absolute;left:5.5cqw;top:3.2cqw;color:#141414}
+  .rg-logo{display:flex;align-items:center;gap:1cqw;font-weight:800;font-size:4.3cqw;letter-spacing:-.02em;line-height:1}
+  .rg-logo img{width:4.2cqw;height:4.6cqw;object-fit:contain}
+  .rg-h{margin-top:3.4cqw;font-size:4.1cqw;font-weight:800;line-height:1.08;letter-spacing:-.025em}
+  .rg-rule{width:3.8cqw;height:.28cqw;background:#c0643a;margin-top:2cqw}
+  .rg-sub{margin-top:2.4cqw;font-size:1.45cqw;font-weight:500;letter-spacing:.42em;line-height:1.8;text-transform:uppercase;color:#2a2a2a}
+  .rg-domain{display:flex;align-items:center;gap:8px;margin:8px 8px 0;padding:7px 11px;border-radius:5px;background:#b8633a;color:#fff;font-size:11px}
+  .rg-domain svg{flex:none}
+  .rg-domain>b{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .rg-domain-score{margin-inline-start:auto;white-space:nowrap;font-size:11px}
+  .rg-domain-score b{font-size:12.5px;font-weight:800;margin-inline:3px}
+  .rg-panels{display:grid;grid-template-columns:1fr 2.25fr;gap:7px;margin:7px 8px 8px}
+  @container (max-width:430px){.rg-panels{grid-template-columns:1fr}.rg-sep{display:none}}
+  .rg-overall{display:flex;gap:12px;padding:11px 10px;border:1px solid var(--line);border-radius:5px;background:linear-gradient(135deg,#f6efe8,#f0e7de)}
+  .rg-scale{position:relative;flex:none;display:flex;flex-direction:column;gap:2px;width:14px;margin-top:3px;align-self:flex-start}
+  .rg-scale i{display:block;height:17px;border-radius:2px}
+  .rg-scale i:first-child{border-radius:4px 4px 2px 2px}
+  .rg-scale i:last-child{border-radius:2px 2px 4px 4px}
+  .rg-scale::after{content:"";position:absolute;right:-9px;bottom:16px;border:5px solid transparent;border-right:6px solid #1f2d4d;border-left:0}
+  .rg-ov-title{font-size:10px;font-weight:800;color:#1f2d4d;line-height:1.3}
+  .rg-ov-num{font-size:25px;font-weight:800;color:#b8633a;line-height:1.1;margin-top:3px}
+  .rg-ov-level{font-size:10.5px;color:var(--ink-soft)}
+  .rg-overall p{margin-top:6px;padding-top:6px;border-top:1px solid var(--line);font-size:8px;line-height:1.45;color:var(--muted)}
+  .rg-comp{padding:9px 11px;border:1px solid var(--line);border-radius:5px;background:#fff}
+  .rg-comp-title{font-size:10px;font-weight:800;color:#1f2d4d;margin-bottom:3px}
+  .rg-row{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 28px;align-items:center;gap:8px;padding-block:4.5px}
+  .rg-row span{font-size:8px;color:#2b3a5c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rg-track{height:6px;border-radius:99px;background:#ece8e3;overflow:hidden}
+  .rg-track i{display:block;height:100%;border-radius:99px}
+  .rg-row b{font-size:8px;font-weight:500;color:var(--ink-soft);text-align:end}
+  .dash-report{position:absolute;z-index:2;width:236px;left:-10px;bottom:-122px;padding:14px}
   .dash-devplan{position:absolute;z-index:3;width:234px;right:-10px;bottom:-136px;padding:14px}
   @media (max-width:960px){
     .dash-report,.dash-devplan{position:static;width:100%;max-width:480px;margin:16px auto 0}
@@ -127,8 +135,7 @@
   .dash-report h5{font-size:14.5px;font-weight:800;color:var(--ink);margin:9px 0 2px}
   .dash-report>p{font-size:11px;color:var(--muted);margin:0}
   .dash-report-img{margin-top:10px;height:50px;border-radius:8px;background:linear-gradient(135deg,var(--brand-l),var(--brand) 60%,var(--brand-d))}
-  .dash-report-meta{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
-  .dash-report-meta div{flex:1;min-width:0}
+  .dash-report-meta{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:8px;margin-top:10px}
   .dash-report-meta div b{display:block;font-size:14.5px;font-weight:800;color:var(--ink)}
   .dash-report-meta div span{font-size:8.5px;color:var(--muted);display:block;line-height:1.3}
   .dash-devplan-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
@@ -326,64 +333,50 @@
       <div class="deco-tri deco-tri-1"></div>
       <div class="deco-tri deco-tri-2"></div>
 
-      <div class="dash-card dash-main">
-        <div class="dash-topbar">
-          <div class="dash-brand"><img src="logo-icon.png" alt=""><span>Rubriq</span></div>
-          <div class="dash-topbar-icons">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-            <span class="dash-avatar">RB</span>
+      <div class="dash-card dash-main rg">
+        <div class="rg-toolbar">
+          <span class="rg-close"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+          <span class="rg-btn rg-hide-xs"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>Print / Save PDF</span>
+          <span class="rg-btn primary"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Build Development Plan</span>
+          <span class="rg-btn rg-hide-sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/></svg>Save</span>
+          <span class="rg-btn soft rg-hide-md"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 2H6v20h12V6z"/><path d="M14 2v4h4M9 12h6M9 16h6"/></svg>Previous Reports</span>
+          <span class="rg-btn icon rg-hide-md"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span>
+          <span class="rg-doc-title">Generated Report</span>
+        </div>
+
+        <div class="rg-cover">
+          <div class="rg-photo"></div>
+          <div class="rg-cover-copy">
+            <div class="rg-logo"><img src="logo-icon.png" alt=""><span>Rubriq</span></div>
+            <div class="rg-h">Development Impact<br>&amp; Youth Leadership</div>
+            <div class="rg-rule"></div>
+            <div class="rg-sub">Program Evaluation Report<br>2024</div>
           </div>
         </div>
-        <div class="dash-body">
-          <div class="dash-sidebar">
-            <div class="dash-nav-item active"><span class="dot"></span>Home</div>
-            <div class="dash-nav-item"><span class="dot"></span>Assessments</div>
-            <div class="dash-nav-item"><span class="dot"></span>Rubrics</div>
-            <div class="dash-nav-item"><span class="dot"></span>People</div>
-            <div class="dash-nav-item"><span class="dot"></span>Reports</div>
-            <div class="dash-nav-item"><span class="dot"></span>Development</div>
-            <div class="dash-nav-item"><span class="dot"></span>Insights</div>
+
+        <div class="rg-domain">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 21v-6M9.5 21V9M15 21v-9M20.5 21V4"/></svg>
+          <b>Domain 1:&nbsp; Development Impact &amp; Youth Leadership</b>
+          <span class="rg-domain-score"><span class="rg-sep">—</span><b>50.4%</b>— Practice Level</span>
+        </div>
+
+        <div class="rg-panels">
+          <div class="rg-overall">
+            <div class="rg-scale"><i style="background:#7d8c6f"></i><i style="background:#4f6f9a"></i><i style="background:#d6b394"></i><i style="background:#b8633a"></i></div>
+            <div>
+              <div class="rg-ov-title">Overall Domain Score</div>
+              <div class="rg-ov-num">50%</div>
+              <div class="rg-ov-level">Practice Level</div>
+              <p>The program shows a developing level of performance in this domain, with clear opportunities for growth.</p>
+            </div>
           </div>
-          <div class="dash-main-panel">
-            <div class="dash-panel-head">
-              <h4>Sample Leadership Assessment</h4>
-              <span>Illustrative data — not a real client</span>
-            </div>
-            <div class="dash-stat-row">
-              <div class="dash-stat-card">
-                <span>Overall Score</span>
-                <b>4.2<i>/5</i></b>
-                <div class="dash-bar"><div class="dash-bar-fill" style="width:84%"></div></div>
-              </div>
-              <div class="dash-stat-card center">
-                <span>Completed</span>
-                <b>142/142</b>
-                <div class="dash-ring">100%</div>
-              </div>
-              <div class="dash-stat-card">
-                <span>Key Strength</span>
-                <b class="small">Strategic Thinking</b>
-                <div class="dash-minibars"><i style="height:35%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:95%"></i></div>
-              </div>
-            </div>
-            <div class="dash-lower-row">
-              <div class="dash-radar-card">
-                <span>Rubric Performance</span>
-                <svg viewBox="0 0 140 120" width="100%" height="50">
-                  <polygon points="70,10 125,45 105,105 35,105 15,45" fill="none" stroke="var(--line)" stroke-width="1"/>
-                  <polygon points="70,35 105,55 92,90 48,90 35,55" fill="none" stroke="var(--line)" stroke-width="1"/>
-                  <polygon points="70,20 110,48 88,98 42,96 28,50" fill="var(--data-blue)" fill-opacity="0.18" stroke="var(--data-blue)" stroke-width="1.5"/>
-                  <polygon points="70,25 100,50 85,92 50,90 38,52" fill="var(--brand)" fill-opacity="0.28" stroke="var(--brand)" stroke-width="1.5"/>
-                </svg>
-                <div class="radar-legend"><span><i class="dot brand"></i>Your org</span><span><i class="dot blue"></i>Benchmark</span></div>
-              </div>
-              <div class="dash-evidence-card">
-                <span>Evidence Highlights</span>
-                <div class="evidence-row"><div class="ev-ic"></div><div><p>"Demonstrates systems thinking in complex situations."</p><small>Project Review</small></div></div>
-                <div class="evidence-row"><div class="ev-ic"></div><div><p>"Leads cross-functional teams effectively."</p><small>360° Feedback</small></div></div>
-              </div>
-            </div>
+          <div class="rg-comp">
+            <div class="rg-comp-title">Domain 1 Component Scores</div>
+            <div class="rg-row"><span>Program Alignment with Youth Needs</span><div class="rg-track"><i style="width:55%;background:#b8633a"></i></div><b>55.0%</b></div>
+            <div class="rg-row"><span>Positive Development &amp; Character Building</span><div class="rg-track"><i style="width:36.3%;background:#d6b394"></i></div><b>36.3%</b></div>
+            <div class="rg-row"><span>Community Participation &amp; Engagement</span><div class="rg-track"><i style="width:66.3%;background:#4f6f9a"></i></div><b>66.3%</b></div>
+            <div class="rg-row"><span>Identity &amp; National Values</span><div class="rg-track"><i style="width:67.5%;background:#7d8c6f"></i></div><b>67.5%</b></div>
+            <div class="rg-row"><span>Social Impact &amp; Role Modeling</span><div class="rg-track"><i style="width:31.3%;background:#b8633a"></i></div><b>31.3%</b></div>
           </div>
         </div>
       </div>
