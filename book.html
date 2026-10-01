@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Book a demo — Rubriq</title>
+<title>Book a Demo — Rubriq</title>
 <meta name="description" content="Book a demo with Rubriq: pick a time in your own timezone, or send us a message about your assessment framework.">
-<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="icon" type="image/png" href="images/brand/logo-icon.png">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap-wide">
-    <a class="brand" href="index.html"><img class="mark" src="logo-icon.png" alt="Rubriq logo"><span data-i18n="brand">Rubriq</span></a>
+    <a class="brand" href="index.html"><img class="mark" src="images/brand/logo-icon.png" alt="Rubriq logo"><span data-i18n="brand">Rubriq</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-i18n="navHome">Home</a>
       <a href="how-it-works.html" data-i18n="navHow">How It Works</a>
       <a href="example-report.html" data-i18n="navReport">Example Report</a>
       <a href="solutions.html" data-i18n="navSolutions">Solutions</a>
       <a href="security.html" data-i18n="navSecurity">Security &amp; Trust</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
       <a class="nav-login-mobile" href="#" data-i18n="navLogin">Login</a>
     </div>
     <div class="nav-right">
@@ -32,55 +33,71 @@
     </div>
   </div>
 </nav>
-<section class="book-page">
-  <div class="wrap">
-    <div class="book-page-head">
-      <div class="kicker-rule"><span class="kicker" data-i18n="ctaKicker">Get started</span><span class="rule"></span></div>
-      <h1 data-i18n="bookH3">Book a call</h1>
-      <p data-i18n="bookSub">Pick a time below — everything is shown in your own local time.</p>
-    </div>
 
-    <div class="book-card" id="book">
-      <p class="tz-note" id="tzNote"></p>
-      <div class="day-tabs" id="dayTabs"></div>
-      <div class="slot-grid" id="slotGrid"></div>
-      <div class="book-form" id="bookForm" hidden>
-        <div class="selected-slot" id="selectedSlotLabel"></div>
-        <input type="text" id="bookName" data-i18n-ph="bookNamePh" placeholder="Your name">
-        <input type="email" id="bookEmail" data-i18n-ph="bookEmailPh" placeholder="Your email">
-        <textarea id="bookNote" data-i18n-ph="bookNotePh" placeholder="Anything you'd like to share (optional)"></textarea>
-        <div class="book-actions">
-          <button class="btn-primary" onclick="requestBookingEmail()" data-i18n="bookSendEmail">Request via email</button>
-          <button class="btn-ghost" onclick="requestBookingWhatsapp()" data-i18n="bookSendWa">Request via WhatsApp</button>
+<main class="bk-section">
+  <span class="bk-shape top"></span><span class="bk-shape left"></span><span class="bk-shape right"></span>
+  <div class="bk-wrap">
+    <form class="bk-card" id="bkForm" novalidate>
+      <div class="bk-left">
+        <h1 class="bk-title" data-i18n="bkDateTitle">Select a date and time</h1>
+        <div class="bk-month">
+          <button type="button" class="bk-nav prev" id="bkPrev" aria-label="Previous month" data-i18n-aria="bkPrevMonth"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+          <span id="bkMonthLabel"></span>
+          <button type="button" class="bk-nav next" id="bkNext" aria-label="Next month" data-i18n-aria="bkNextMonth"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
         </div>
-        <p class="book-disclaimer" data-i18n="bookDisclaimer">This sends a request, not an automatic booking — we'll confirm the time back with you.</p>
+        <div class="bk-cal" id="bkCal"></div>
+        <div class="bk-times-head">
+          <h2 data-i18n="bkTimesTitle">Available times</h2>
+          <span class="bk-tz" id="bkTz"></span>
+        </div>
+        <div class="bk-slots" id="bkSlots"></div>
       </div>
-    </div>
 
-    <div class="contact-form-card">
-      <h3 data-i18n="contactH3">Or just send a message</h3>
-      <div class="form-grid">
-        <input id="cfName" data-i18n-ph="cfNamePh" placeholder="Name">
-        <input id="cfEmail" type="email" data-i18n-ph="cfEmailPh" placeholder="Email">
-        <input id="cfCompany" data-i18n-ph="cfCompanyPh" placeholder="Company (optional)" style="grid-column:1/-1">
-        <textarea id="cfMessage" data-i18n-ph="cfMessagePh" placeholder="Message"></textarea>
+      <div class="bk-right">
+        <h2 class="bk-title" data-i18n="bkDetailsTitle">Your details</h2>
+        <div class="bk-fields">
+          <label class="bk-field"><span><span data-i18n="bkName">Full name</span> <b>*</b></span><input id="bkName" type="text" autocomplete="name" required data-i18n-ph="bkNamePh" placeholder="Jane Smith"></label>
+          <label class="bk-field"><span><span data-i18n="bkEmail">Work email</span> <b>*</b></span><input id="bkEmail" type="email" autocomplete="email" required data-i18n-ph="bkEmailPh" placeholder="jane@company.com"></label>
+          <label class="bk-field"><span><span data-i18n="bkCompany">Company</span> <b>*</b></span><input id="bkCompany" type="text" autocomplete="organization" required data-i18n-ph="bkCompanyPh" placeholder="Your company"></label>
+          <label class="bk-field"><span><span data-i18n="bkRole">Role</span> <b>*</b></span>
+            <select id="bkRole" required>
+              <option value="" data-i18n="bkRolePh">Select role</option>
+              <option value="director" data-i18n="bkRole1">Partner / Director</option>
+              <option value="consultant" data-i18n="bkRole2">Consultant</option>
+              <option value="manager" data-i18n="bkRole3">Project or program manager</option>
+              <option value="quality" data-i18n="bkRole4">Quality / M&amp;E lead</option>
+              <option value="other" data-i18n="bkRole5">Other</option>
+            </select></label>
+          <label class="bk-field full"><span><span data-i18n="bkFw">Assessment type / framework</span> <b>*</b></span>
+            <select id="bkFramework" required>
+              <option value="" data-i18n="bkFwPh">Select your framework</option>
+              <option value="capacity" data-i18n="bkFw1">Capacity / maturity assessment</option>
+              <option value="program" data-i18n="bkFw2">Program evaluation</option>
+              <option value="quality" data-i18n="bkFw3">Quality review / accreditation</option>
+              <option value="audit" data-i18n="bkFw4">Audit / compliance scorecard</option>
+              <option value="leadership" data-i18n="bkFw5">Leadership / performance assessment</option>
+              <option value="other" data-i18n="bkFw6">Other / custom framework</option>
+            </select></label>
+          <label class="bk-field full"><span><span data-i18n="bkNotes">Tell us about your framework</span> <i data-i18n="bkOptional">(optional)</i></span>
+            <textarea id="bkNotes" maxlength="500" rows="3" data-i18n-ph="bkNotesPh" placeholder="e.g. key areas, structure, current tools or specific questions you'd like to cover..."></textarea>
+            <small class="bk-count" id="bkCount">0/500</small></label>
+          <div class="bk-field full"><span><span data-i18n="bkUpload">Upload framework</span> <i data-i18n="bkOptional">(optional)</i></span>
+            <label class="bk-drop" id="bkDrop" for="bkFile">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M14 2H6v20h12V6z"/><path d="M14 2v4h4M9 12h6M9 16h6"/></svg>
+              <span><strong data-i18n="bkDrop">Drop a file here or <u>browse</u></strong><small data-i18n="bkDropHint">PDF, PPT, DOCX (max 10MB)</small></span>
+              <input id="bkFile" type="file" accept=".pdf,.ppt,.pptx,.doc,.docx">
+            </label>
+            <small class="bk-file" id="bkFileName" aria-live="polite"></small>
+          </div>
+        </div>
+        <p class="bk-error" id="bkError" role="alert" hidden></p>
+        <button class="bk-submit" type="submit"><span data-i18n="bkSubmit">Book Demo</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+        <p class="bk-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-i18n="bkNote">You'll receive a calendar invite by email.</span></p>
+        <p class="bk-done" id="bkDone" role="status" hidden></p>
       </div>
-      <button class="btn-primary" style="margin-top:16px" onclick="sendContactForm()" data-i18n="cfSend">Send message</button>
-      <p class="form-note" data-i18n="cfNote">Opens your email app with this pre-filled — nothing is sent without you hitting send.</p>
-    </div>
-
-    <div class="contact-row">
-      <div class="contact-chip">
-        <b id="email-val">adas.abdulmajeed@gmail.com</b>
-        <button class="copy-btn" onclick="copyVal('email-val',this)" aria-label="Copy email">⧉</button>
-      </div>
-      <div class="contact-chip">
-        <b id="wa-val">+966 55 084 3077</b>
-        <button class="copy-btn" onclick="copyVal('wa-val',this)" aria-label="Copy WhatsApp number">⧉</button>
-      </div>
-    </div>
+    </form>
   </div>
-</section>
+</main>
 
 <footer>
   <div class="wrap">

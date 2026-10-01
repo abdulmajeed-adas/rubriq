@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us — Rubriq</title>
+<meta name="description" content="Contact Rubriq: questions about the platform, your framework, pricing, or partnerships.">
+<link rel="icon" type="image/png" href="images/brand/logo-icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap-wide">
+    <a class="brand" href="index.html"><img class="mark" src="images/brand/logo-icon.png" alt="Rubriq logo"><span data-i18n="brand">Rubriq</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="how-it-works.html" data-i18n="navHow">How It Works</a>
+      <a href="example-report.html" data-i18n="navReport">Example Report</a>
+      <a href="solutions.html" data-i18n="navSolutions">Solutions</a>
+      <a href="security.html" data-i18n="navSecurity">Security &amp; Trust</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+      <a class="nav-login-mobile" href="#" data-i18n="navLogin">Login</a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langBtn" type="button" onclick="setLang(currentLang==='en'?'ar':'en')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        <span id="langBtnText">العربية</span>
+      </button>
+      <a class="nav-login" href="#" data-i18n="navLogin">Login</a>
+      <a class="nav-cta" href="book.html"><span data-i18n="navCta">Book a demo</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="navMenu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main class="bk-section">
+  <span class="bk-shape top"></span><span class="bk-shape left"></span><span class="bk-shape right"></span>
+  <div class="bk-wrap">
+    <form class="bk-card ct-card" id="ctForm" novalidate>
+      <div class="bk-left ct-left">
+        <h1 class="bk-title" data-i18n="ctTitle">Contact us</h1>
+        <p class="ct-lede" data-i18n="ctLede">Questions about Rubriq, your framework, or working together? Send us a message and we'll get back to you by email.</p>
+        <div class="ct-items">
+          <div class="ct-item">
+            <span class="ct-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span>
+            <div><small data-i18n="ctEmailLabel">Email us</small><a class="ct-value" id="ctEmail" href="mailto:adas.abdulmajeed@gmail.com">adas.abdulmajeed@gmail.com</a></div>
+            <button type="button" class="ct-copy" id="ctCopy" aria-label="Copy email" data-i18n-aria="ctCopyAria"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
+          </div>
+          <a class="ct-item ct-link" href="book.html">
+            <span class="ct-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+            <div><small data-i18n="ctDemoLabel">Prefer to talk?</small><span class="ct-value" data-i18n="ctDemoLink">Book a demo</span></div>
+            <svg class="ct-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="bk-right">
+        <h2 class="bk-title" data-i18n="ctFormTitle">Send us a message</h2>
+        <div class="bk-fields">
+          <label class="bk-field"><span><span data-i18n="bkName">Full name</span> <b>*</b></span><input id="ctName" type="text" autocomplete="name" required data-i18n-ph="bkNamePh" placeholder="Jane Smith"></label>
+          <label class="bk-field"><span><span data-i18n="bkEmail">Work email</span> <b>*</b></span><input id="ctMail" type="email" autocomplete="email" required data-i18n-ph="bkEmailPh" placeholder="jane@company.com"></label>
+          <label class="bk-field"><span><span data-i18n="bkCompany">Company</span> <i data-i18n="bkOptional">(optional)</i></span><input id="ctCompany" type="text" autocomplete="organization" data-i18n-ph="bkCompanyPh" placeholder="Your company"></label>
+          <label class="bk-field"><span><span data-i18n="ctTopic">Topic</span> <b>*</b></span>
+            <select id="ctTopic" required>
+              <option value="" data-i18n="ctTopicPh">Select a topic</option>
+              <option value="general" data-i18n="ctTopic1">General question</option>
+              <option value="pricing" data-i18n="ctTopic2">Pricing</option>
+              <option value="framework" data-i18n="ctTopic3">My framework</option>
+              <option value="partnership" data-i18n="ctTopic4">Partnership</option>
+              <option value="other" data-i18n="ctTopic5">Other</option>
+            </select></label>
+          <label class="bk-field full"><span><span data-i18n="ctMsg">Message</span> <b>*</b></span>
+            <textarea id="ctMessage" maxlength="1000" rows="6" required data-i18n-ph="ctMsgPh" placeholder="How can we help?"></textarea>
+            <small class="bk-count" id="ctCount">0/1000</small></label>
+        </div>
+        <p class="bk-error" id="ctError" role="alert" hidden></p>
+        <button class="bk-submit" type="submit"><span data-i18n="ctSubmit">Send message</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+        <p class="bk-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg><span data-i18n="ctNote">We'll reply to your work email.</span></p>
+        <p class="bk-done" id="ctDone" role="status" hidden></p>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-copy">
+      <span data-i18n="foot1">Rubriq — an AI solutions agency building assessment-to-report platforms for consulting teams.</span>
+      <span data-i18n="foot2">Case study available on request.</span>
+    </div>
+    <div class="foot-links">
+      <a href="privacy.html" data-i18n="footPrivacy">Privacy Policy</a>
+      <a href="terms.html" data-i18n="footTerms">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

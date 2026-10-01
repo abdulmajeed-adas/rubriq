@@ -31,27 +31,38 @@ and a finished, data-grounded narrative report plus an action plan comes out.
   guarded so it only runs where its elements exist).
 - Pages:
   - `index.html` (landing)
-  - `how-it-works.html` (intentionally empty since Oct 1, 2026; the owner will send new sections for it)
+  - `how-it-works.html`: 5 sections built Oct 1, 2026 from the owner's mockups (`_design/mockups/09-*`), with `.hp-*` classes:
+    a hero with 3 step cards (Configure / Assess & Review / Generate), 01 Configure, 02 Assess & Review, 03 Generate,
+    and a closing CTA. Every UI card is HTML/CSS rather than a crop, so it stays sharp; the owner rejected blurry crops.
+    Card labels are English illustration text (`dir="ltr"`, `aria-hidden`); the copy around them is translated. Images:
+    `images/how-it-works-page/mountain.jpg` (thumbnails) and `excel-icon.png`. "See an Example Report" goes to
+    `index.html#output` while the Example Report page is empty.
   - `example-report.html` (intentionally empty since Oct 1, 2026; the owner will send new sections for it)
   - `solutions.html`
   - `security.html`
-  - `book.html` (booking widget, contact form, and chips)
+  - `book.html` (Book a Demo: calendar booking and details form)
+  - `contact.html` (Contact us: email card, a Book a demo link, and a message form; same card design as booking.
+    "Send message" opens a pre-filled mailto. Topic options were written by Claude, so the owner may edit them)
   - `privacy.html`
   - `terms.html`
 - Solutions, Security, Privacy, and Terms are starter pages: a heading plus "coming soon". The legal pages
   deliberately have no invented legal text; the owner has to supply the real policy.
 - The nav and footer HTML are repeated in each page (static, no includes). **When you change the menu or footer,
-  update all 8 files.**
-  - The menu is: Home, How It Works, Example Report, Solutions, Security & Trust, then the language toggle, a
+  update all 9 files.**
+  - The menu is: Home, How It Works, Example Report, Solutions, Security & Trust, Contact, then the language toggle, a
     Login button (`href="#"` placeholder until the platform login URL exists), and Book a demo (`book.html`).
   - The current page gets `aria-current` from `site.js`.
   - At 1180px and below the links collapse into a ☰ dropdown. At 600px and below Login moves into the dropdown.
   - The footer has Privacy Policy and Terms of Service links.
 - The home page keeps its How it works and output sections too; the owner may later replace the separate pages with
   new designs.
-- Assets: `logo-icon.png` (logo glyph on a transparent background; also the favicon) and
-  `rubriq-report-mockup-hq.jpg` (the report mockup; no longer shown on its own, but the hero cover crops its photo
-  from it, so keep the file).
+- Images live in `images/`, one folder per section: `brand/` (logo and favicon), `hero/` (`report-page.jpg`, the
+  full-resolution report page used as the hero's big card), `before-after/`, `methodology/`, `how-it-works/`,
+  `output/`, `proof/`, and `get-started/`. Files have plain descriptive names; there are no prefixes. Put new section
+  images in a new folder named after the section.
+- The owner's design mockups are saved locally in `_design/mockups/`, numbered in page order, with older and scrapped
+  versions in `_design/mockups/old/`. `_design/` is in `.gitignore`, so they are never pushed to the public repo or
+  served on the site.
 - Compress large images to JPEG before adding them. PNGs with photos in them are too heavy.
 - Local preview: on the current PC (no Node), serve the folder on `http://localhost:8765` with a PowerShell
   `HttpListener` running in the background, then check it in the owner's Chrome through the Claude extension.
@@ -84,22 +95,23 @@ Typography:
 
 ## Page structure, in order
 1. **Nav**: the shared site menu (see Stack). "Home" is marked as the current page.
-2. **Hero**: a two-column grid.
-   - Left: eyebrow "Assess / Analyze / Develop", the headline "Turn any rubric into a self-writing report.",
-     the lede, a scope note, and two buttons.
-   - Right: the big card is an HTML/CSS copy of the platform's report-generation page (`.rg` classes): a toolbar,
-     a cover, the Domain 1 banner, the overall score, and component bars. It replaced a dashboard on Sept 29, 2026,
-     because the platform has no dashboard. The cover's mountain photo is cropped from `rubriq-report-mockup-hq.jpg`
-     with a CSS mask. Cover sizes use `cqw` units so the text stays aligned with the photo. Two small cards
-     ("Leadership Assessment Report", "Development Plan") overlap its bottom.
-   - The hero is tuned to fit a roughly 900px viewport without the next section peeking in. The settings are
-     `.hero` padding-bottom 220px and `.hero-copy { transform: translateY(40px) }`.
+2. **Hero** (redesigned Oct 1, 2026 from the owner's "Editorial SaaS Hero" mockup): two columns inside `.wrap-wide`
+   (1480px, the same width as the nav).
+   - Left: the eyebrow "Assess / Review / Report"; a Fraunces headline "Turn your framework into
+     client-ready reports." with the last phrase in copper (`.hero-accent`); a lede; 3 features with dot separators
+     (Evidence-grounded, Consultant-reviewed, Automated outputs); "Book a Demo" (`book.html`); and "See Example
+     Report" (`#output` until the Example Report page has content).
+   - Right (`.hero-visual`): the full-resolution `images/hero/report-page.jpg` as the big card, plus an HTML
+     Development Plan card (`.hero-plan`, LTR, English labels) overlapping its bottom-right, with CSS beige shapes
+     behind. The owner rejected a crop from the mockup as blurry; keep this sharp version. It bleeds 48px past the
+     container only at 1560px and above.
+   - The old scope-note line was dropped because it isn't in the mockup. Tech-only positioning still applies to copy.
 3. **Before / With Rubriq** (`#compare`, `.ba-*` classes, uses its own 1480px `.ba-wrap`): a centered header, then two
    panels with a round arrow between them.
    - The left panel has 6 steps with copper arrows and a "2–3 days" bar.
    - The right panel has the framework, an arrow, the Rubriq logo card (HTML), dotted SVG connectors, a 2×2 grid of
      platform cards, and a "Minutes, not days" bar.
-   - The pictorial parts are crops of the owner's mockup (`ba-*.jpg`). Captions are HTML and translated. The labels
+   - The pictorial parts are crops of the owner's mockup (`images/before-after/`). Captions are HTML and translated. The labels
      inside the card crops stay English.
    - Below 1280px the panels stack and the middle arrow points down. Below 760px the steps become a 3-column grid
      and the right-panel flow stacks. Below 440px it's 2 columns.
@@ -113,11 +125,11 @@ Typography:
      has an HTML title and description with a cropped visual.
    - Three bottom labels sit at the foot of each column.
    - Below 1200px it stacks vertically and the connectors hide. Below 640px the chips go 2-up and the outputs 1-up.
-   - Crops: `me-*.jpg`. Added on Sept 29, 2026.
+   - Crops: `images/methodology/`. Added on Sept 29, 2026.
 5. **How it works** (`#how`, 1480px `.steps-wrap`): a centered kicker with rules on both sides, the serif heading, and
    4 step cards in a grid.
    - Each card has an "art box" (`aspect-ratio 433/300`, the mockup's illustration band), and the crop
-     (`hw-1.jpg` to `hw-4.jpg`) sits inside it at the mockup position via `--x`, `--y`, and `--w`. Below that come
+     (`images/how-it-works/step-1-framework.jpg` to `images/how-it-works/step-4-report.jpg`) sits inside it at the mockup position via `--x`, `--y`, and `--w`. Below that come
      the number, the Fraunces title, and the text.
    - Round copper arrows sit inside the art boxes and straddle the gaps between cards. They're hidden below 1100px,
      where the grid goes 2×2, and below 620px it's 1 column.
@@ -126,7 +138,7 @@ Typography:
    The nav's "Product" and "Solutions" links and the hero's "See it in action" button point here.
 6. **Not another dashboard** (`#output`, `.no-*` classes, 1480px `.no-wrap`): a centered header, then
    Assessment / Report / Development Plan tabs, three sample-document cards, and 3 features with dividers.
-   - The cards (`no-report.jpg`, `no-assessment.jpg`, `no-devplan.jpg`) are one mockup strip cut in three. On
+   - The cards (`images/output/report-card.jpg`, `images/output/assessment-card.jpg`, `images/output/development-plan-card.jpg`) are one mockup strip cut in three. On
      desktop they sit in a grid proportional to their widths, so they line up like the original. The strip is
      `dir="ltr"` so it doesn't mirror.
    - The tabs work. On desktop all 3 cards show, and a click dims the others. At 1000px and below only the selected
@@ -136,24 +148,32 @@ Typography:
    - Left: the "Proof, not a prototype" kicker, the serif headline "Already running in production.", the lede, 2×2
      stat cards (54 indicators, 3 assessment domains, Multiple partner organizations, Minutes to generate reports),
      and a copper "View example report" button.
-   - Right: the fanned report pages crop (`proof-reports.jpg`).
+   - Right: the fanned report pages crop (`images/proof/report-pages.jpg`).
    - The owner's mockup brought "54" and "3 domains" back here on purpose; the hero still has no stats row.
    - Below 1100px the columns stack, and below 480px the stats go 1-up.
    - Redesigned on Sept 29, 2026, replacing the old copper strip.
 8. **Final CTA + contact** (`#contact`, `.cta-*` classes, 1480px `.cta-wrap`):
    - At the top, the "Get started" CTA from the owner's mockup: the headline "See Rubriq running on your own
-     framework.", a lede, and two buttons, plus the illustration crop `cta-art.jpg`.
+     framework.", a lede, and two buttons, plus the illustration crop `images/get-started/illustration.jpg`.
    - "Book a demo" links to `book.html`. "Send your framework" is a mailto; JS sets its `href` from
      `CONTACT_EMAIL`, with a pre-filled subject and body.
    - The booking widget, contact form, and chips are not on the home page. The owner wanted them on their own page.
 9. **Footer**.
 
-### book.html (the booking page, added Sept 29, 2026)
-- It has a centered heading ("Get started" / "Book a call"), then the booking widget, the "Or just send a message"
-  form, and the email/WhatsApp chips.
-- The nav "Book a demo", the hero "Book a call →", and the CTA "Book a demo" all link here.
-- Its styles and code live in `site.css` and `site.js`, like every other page.
-- On Cloudflare Pages it will also be served at `/book`.
+### book.html (Book a Demo; redesigned Oct 1, 2026 from the owner's "Warm Copper Booking Interface" mockup)
+- One two-column card (`.bk-*` classes) on a page with beige CSS shapes behind it and no page heading, as in the
+  mockup.
+  - Left: "Select a date and time", a month calendar with prev/next arrows, then "Available times" with the
+    auto-detected timezone and a 3-column slot grid.
+  - Right: "Your details": Full name, Work email, Company, Role (select), Assessment type / framework (select), an
+    optional notes textarea with a 0/500 counter, an optional file drop zone (PDF, PPT, or DOCX up to 10MB), a
+    Book Demo button, and "You'll receive a calendar invite by email."
+- The Role and Framework option lists were written by Claude because the mockup didn't list them. The owner may want
+  to edit them (`bkRole1`–`5` and `bkFw1`–`6` in `site.js`).
+- The old "Or just send a message" form and the email/WhatsApp chips were removed because they aren't in the
+  mockup.
+- The nav "Book a demo", the hero "Book a Demo", and the CTA "Book a demo" all link here. On Cloudflare Pages it is
+  also served at `/book`.
 
 ### Restructure done (Sept 29, 2026)
 The owner rebuilt the page to exactly this order, one screenshot per section:
@@ -184,14 +204,16 @@ along with its `ships-*.jpg` crops and the Caveat font.
 - The decorative illustrations are locked with `dir="ltr"` so they don't mirror. Their UI labels stay in English on
   purpose.
 
-## Booking widget and contact form (on `book.html`)
-- The widget shows 14 days of hourly slots from **8 AM to 1 AM Riyadh time (UTC+3)**, converted to and grouped by
-  the visitor's own timezone. It requires at least 1 hour of notice.
-- A booking opens a pre-filled **mailto** (to adas.abdulmajeed@gmail.com) or a **WhatsApp** link (+966 55 084 3077).
-  **Nobody has confirmed that WhatsApp number yet.**
-- This does not sync with a real calendar. Slots never lock once taken. A possible upgrade is a Calendly or Cal.com
-  embed.
-- The contact form is also mailto-based.
+## Booking logic (on `book.html`, in `site.js`)
+- Availability is unchanged: hourly slots from **8 AM to 1 AM Riyadh time (UTC+3)** for the next 90 days (`NUM_DAYS`), with at
+  least 1 hour of notice. They are shown in the visitor's timezone, which is detected automatically and shown as a label next to "Available
+  times" (for example "GMT+3 (Riyadh)"); the owner asked for no manual picker. Calendar days with no slots are disabled.
+- **There is no backend.** "Book Demo" validates the form, then opens a pre-filled **mailto** to
+  adas.abdulmajeed@gmail.com with every field, the time in both the visitor's timezone and Riyadh time, and the file
+  name. A mailto can't attach the file, so the visitor is told to attach it themselves. The owner confirms by
+  sending a calendar invite manually.
+- Nothing syncs with a real calendar, so slots never lock. For real bookings, file uploads, and automatic invites,
+  connect a service: a Cal.com embed or API, Formspree, or a Cloudflare Pages Function plus email.
 
 ## Rules and decisions to keep
 - **No fabricated social proof.** Don't add fake client logos (the mockups showed Microsoft, PwC, UNICEF, World Bank,
@@ -211,7 +233,7 @@ along with its `ships-*.jpg` crops and the Caveat font.
 
 ## Known issues / TODO
 - The Login button goes nowhere yet (`href="#"`); point it at the platform login once it exists.
-- The Proof button "View example report" links to `example-report.html`.
+- The Proof button "View example report" and the hero "See Example Report" go to `#output` while `example-report.html` is empty; repoint both to that page once it has content.
 - **Name risk:** rubriq.com is an existing company (an AI academic editing and peer-review tool), and the name
   sounds the same as Rubrik, a large public company. Suggested fixes: use a `.io`, `.ai`, or `.co` domain and get a
   trademark check. The domain is not bought yet.

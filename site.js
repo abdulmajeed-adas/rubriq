@@ -6,12 +6,13 @@
       brand:"Rubriq",
       navSolutions:"Solutions",
       navCta:"Book a demo",
-      eyebrow:"Assess / Analyze / Develop",
-      h1:"Turn any rubric into a self-writing report.",
-      lede:"Rubriq is an AI solutions agency that builds automated assessment-to-report platforms for consulting practices. Plug in your framework — audits, quality reviews, accreditation checklists, compliance scorecards — and we turn raw scores and evidence into a finished, data-grounded report and action plan. No more nights spent writing the same report structure by hand.",
-      scopeNote:"We build and run the platform. Your team keeps the assessments, the judgment calls, and the client relationships.",
-      heroBtn1:"Book a call →",
-      heroBtn2:"See it in action",
+      eyebrow:"Assess / Review / Report",
+      h1:"Turn your<br>framework into<br><span class=\"hero-accent\">client-ready reports.</span>",
+      lede:"Rubriq helps consulting teams turn structured assessments into polished reports and development plans — grounded in evidence, reviewed by consultants, and generated automatically.",
+      heroBtn1:"Book a Demo",
+      heroBtn2:"See Example Report",
+      heroF1:"Evidence-grounded", heroF2:"Consultant-reviewed", heroF3:"Automated outputs",
+      heroAlt:"Sample generated report: the Development Impact & Youth Leadership cover, a 50.4% domain score, component scores, and a development plan",
       baKicker:"Before / With Rubriq",
       baH2:"Same methodology. Far less manual work.",
       baSub:"Keep your framework. Remove the spreadsheet chaos, back-and-forth emails, and manual report writing.",
@@ -56,6 +57,26 @@
       noF2h:"Executive summary + domain analysis", noF2p:"Turn assessments into client-ready reports.",
       noF3h:"Priorities + actions + timeline", noF3p:"Translate insight into measurable growth.",
       howMore:"Learn more about how it works",
+      hpKicker:"How it works", hpH1:"From your methodology to a finished client deliverable.",
+      hpLede:"Set it up once. Run the assessment. Review the results. Rubriq handles the reporting.",
+      hpBtn2:"See an Example Report",
+      hpS1t:"Configure", hpS1p:"Your methodology and knowledge.",
+      hpS2t:"Assess & Review", hpS2p:"Clients contribute. You stay in control.",
+      hpS3t:"Generate", hpS3p:"Client-ready reports and development plans.",
+      hpC1H2:"Configure your methodology once.",
+      hpC1P:"Map your framework, knowledge base, terminology, and reporting style into Rubriq — then reuse it across every client and assessment cycle.",
+      hpC1Note:"Reuse the same configured methodology across every client and assessment cycle.",
+      hpC2H2:"Collect the evidence. Keep the judgment human.",
+      hpC2P:"Clients complete the assessment, upload evidence, and add context. Your team reviews the results, checks the evidence, adjusts where needed, and approves the final assessment.",
+      hpC2Note:"Nothing is generated until your team approves the assessment.",
+      hpC3H2:"Approved assessment in. Finished deliverables out.",
+      hpC3P:"Rubriq uses approved scores, evidence, and your methodology to generate client-ready reports and development plans in your organization's style.",
+      hpF1t:"Evidence-grounded", hpF1p:"Uses approved scores, evidence, and notes.",
+      hpF2t:"Written in your style", hpF2p:"Aligned with your templates, voice, and branding.",
+      hpF3t:"Ready for the client", hpF3p:"Polished reports and development plans, instantly.",
+      hpCtaKicker:"Ready to see it in action?", hpCtaH2:"See Rubriq running on<br>your own framework.",
+      hpCtaP:"Bring your methodology, and we'll show you how Rubriq could work in practice for your team.",
+      hpCtaBtn2:"Send Your Framework",
       howKicker:"How it works",
       howH2:"One framework in, a finished report out.",
       step1h:"Load your framework", step1p:"Domains, criteria, weights, and a maturity or scoring scale — modeled once, reused every cycle.",
@@ -75,24 +96,33 @@
       ctaBtn1:"Book a demo", ctaBtn2:"Send your framework",
       foot1:"Rubriq — an AI solutions agency building assessment-to-report platforms for consulting teams.",
       foot2:"Case study available on request.",
-      bookH3:"Book a call",
-      bookSub:"Pick a time below — everything is shown in your own local time.",
-      tzNote:"Times shown in your timezone ({tz}). Available 8:00 AM – 1:00 AM Riyadh time.",
+      bkDateTitle:"Select a date and time", bkTimesTitle:"Available times",
+      bkPrevMonth:"Previous month", bkNextMonth:"Next month",
       noSlots:"No times left for this day — try another day.",
-      selectedSlotPrefix:"Selected:",
-      bookNamePh:"Your name",
-      bookEmailPh:"Your email",
-      bookNotePh:"Anything you'd like to share (optional)",
-      bookSendEmail:"Request via email",
-      bookSendWa:"Request via WhatsApp",
-      bookDisclaimer:"This sends a request, not an automatic booking — we'll confirm the time back with you.",
-      contactH3:"Or just send a message",
-      cfNamePh:"Name",
-      cfEmailPh:"Email",
-      cfCompanyPh:"Company (optional)",
-      cfMessagePh:"Message",
-      cfSend:"Send message",
-      cfNote:"Opens your email app with this pre-filled — nothing is sent without you hitting send.",
+      bkDetailsTitle:"Your details",
+      bkName:"Full name", bkNamePh:"Jane Smith",
+      bkEmail:"Work email", bkEmailPh:"jane@company.com",
+      bkCompany:"Company", bkCompanyPh:"Your company",
+      bkRole:"Role", bkRolePh:"Select role",
+      bkRole1:"Partner / Director", bkRole2:"Consultant", bkRole3:"Project or program manager", bkRole4:"Quality / M&E lead", bkRole5:"Other",
+      bkFw:"Assessment type / framework", bkFwPh:"Select your framework",
+      bkFw1:"Capacity / maturity assessment", bkFw2:"Program evaluation", bkFw3:"Quality review / accreditation", bkFw4:"Audit / compliance scorecard", bkFw5:"Leadership / performance assessment", bkFw6:"Other / custom framework",
+      bkNotes:"Tell us about your framework", bkOptional:"(optional)",
+      bkNotesPh:"e.g. key areas, structure, current tools or specific questions you'd like to cover...",
+      bkUpload:"Upload framework", bkDrop:"Drop a file here or <u>browse</u>", bkDropHint:"PDF, PPT, DOCX (max 10MB)",
+      bkFileType:"Please choose a PDF, PPT, or DOCX file.", bkFileSize:"That file is over 10MB. Please choose a smaller one.",
+      bkSubmit:"Book Demo", bkNote:"You'll receive a calendar invite by email.",
+      bkErrSlot:"Please pick a date and time.", bkErrFields:"Please fill in all required fields.", bkErrEmail:"Please enter a valid work email.",
+      bkDone:"Your email app should now open with your request. Send it, and we'll confirm with a calendar invite.",
+      bkDoneFile:"Your email app should now open with your request. Attach your framework file, send it, and we'll confirm with a calendar invite.",
+      navContact:"Contact",
+      ctTitle:"Contact us", ctLede:"Questions about Rubriq, your framework, or working together? Send us a message and we'll get back to you by email.",
+      ctEmailLabel:"Email us", ctCopyAria:"Copy email address", ctDemoLabel:"Prefer to talk?", ctDemoLink:"Book a demo",
+      ctFormTitle:"Send us a message", ctTopic:"Topic", ctTopicPh:"Select a topic",
+      ctTopic1:"General question", ctTopic2:"Pricing", ctTopic3:"My framework", ctTopic4:"Partnership", ctTopic5:"Other",
+      ctMsg:"Message", ctMsgPh:"How can we help?", ctSubmit:"Send message", ctNote:"We'll reply to your work email.",
+      ctErrFields:"Please fill in your name, topic, and message.",
+      ctDone:"Your email app should now open with your message. Send it and we'll get back to you.",
       navHome:"Home", navHow:"How It Works", navReport:"Example Report", navSecurity:"Security & Trust", navLogin:"Login", navMenu:"Menu",
       footPrivacy:"Privacy Policy", footTerms:"Terms of Service",
       solKicker:"Use cases", solH1:"Solutions & use cases",
@@ -111,12 +141,13 @@
       brand:"روبريك",
       navSolutions:"الحلول",
       navCta:"احجز عرضًا توضيحيًا",
-      eyebrow:"تقييم / تحليل / تطوير",
-      h1:"حوّل أي إطار تقييم إلى تقرير يُكتب تلقائيًا.",
-      lede:"روبريك وكالة حلول ذكاء اصطناعي تبني منصات تحوّل التقييم إلى تقرير جاهز لصالح الممارسات الاستشارية. أدخل إطارك — تدقيق، مراجعة جودة، معايير اعتماد، أو بطاقة امتثال — ونحوّله من درجات وبيّنات خام إلى تقرير متكامل مبني على البيانات وخطة عمل جاهزة. لا مزيد من الليالي التي تُمضى في كتابة نفس هيكل التقرير يدويًا.",
-      scopeNote:"نحن نبني المنصة ونُشغّلها. التقييم والقرارات الاحترافية وعلاقات العملاء تبقى بين يدي فريقك.",
-      heroBtn1:"احجز مكالمة ←",
-      heroBtn2:"شاهد كيف تعمل",
+      eyebrow:"تقييم / مراجعة / تقرير",
+      h1:"حوّل إطارك<br>إلى <span class=\"hero-accent\">تقارير جاهزة للعميل.</span>",
+      lede:"يساعد روبريك فرق الاستشارات على تحويل التقييمات المنظمة إلى تقارير احترافية وخطط تطوير — مبنية على البيّنات، ويراجعها الاستشاريون، وتُولَّد تلقائيًا.",
+      heroBtn1:"احجز عرضًا توضيحيًا",
+      heroBtn2:"شاهد نموذج تقرير",
+      heroF1:"مبني على البيّنات", heroF2:"بمراجعة الاستشاري", heroF3:"مخرجات مؤتمتة",
+      heroAlt:"نموذج تقرير مولّد: غلاف تقرير الأثر التنموي والقيادة الشبابية، ودرجة مجال 50.4%، ودرجات المكوّنات، وخطة تطوير",
       baKicker:"قبل / مع روبريك",
       baH2:"نفس المنهجية. عمل يدوي أقل بكثير.",
       baSub:"احتفظ بإطارك، وتخلّص من فوضى جداول البيانات والمراسلات المتكررة وكتابة التقارير يدويًا.",
@@ -161,6 +192,26 @@
       noF2h:"ملخص تنفيذي + تحليل المجالات", noF2p:"حوّل التقييمات إلى تقارير جاهزة للعميل.",
       noF3h:"الأولويات + الإجراءات + الجدول الزمني", noF3p:"حوّل الرؤى إلى نمو قابل للقياس.",
       howMore:"اعرف المزيد عن طريقة العمل",
+      hpKicker:"كيف يعمل", hpH1:"من منهجيتك إلى مُخرَج نهائي جاهز للعميل.",
+      hpLede:"أعدّه مرة واحدة. نفّذ التقييم. راجع النتائج. وروبريك يتولى كتابة التقارير.",
+      hpBtn2:"شاهد نموذج تقرير",
+      hpS1t:"الإعداد", hpS1p:"منهجيتك ومعرفتك.",
+      hpS2t:"التقييم والمراجعة", hpS2p:"العملاء يشاركون، وأنت تبقى المتحكّم.",
+      hpS3t:"التوليد", hpS3p:"تقارير جاهزة للعميل وخطط تطوير.",
+      hpC1H2:"اضبط منهجيتك مرة واحدة.",
+      hpC1P:"انقل إطارك وقاعدة معرفتك ومصطلحاتك وأسلوب تقاريرك إلى روبريك — ثم أعد استخدامها مع كل عميل وكل دورة تقييم.",
+      hpC1Note:"أعد استخدام المنهجية نفسها مع كل عميل وكل دورة تقييم.",
+      hpC2H2:"اجمع البيّنات، وأبقِ الحكم بشريًا.",
+      hpC2P:"يكمل العملاء التقييم ويرفعون البيّنات ويضيفون السياق. ثم يراجع فريقك النتائج ويتحقق من البيّنات ويعدّل عند الحاجة ويعتمد التقييم النهائي.",
+      hpC2Note:"لا يُولَّد أي شيء قبل أن يعتمد فريقك التقييم.",
+      hpC3H2:"تقييم معتمد يدخل، ومخرجات نهائية تخرج.",
+      hpC3P:"يستخدم روبريك الدرجات المعتمدة والبيّنات ومنهجيتك لتوليد تقارير جاهزة للعميل وخطط تطوير بأسلوب جهتك.",
+      hpF1t:"مبنية على البيّنات", hpF1p:"تستخدم الدرجات المعتمدة والبيّنات والملاحظات.",
+      hpF2t:"مكتوبة بأسلوبك", hpF2p:"متوافقة مع قوالبك وأسلوبك وهويتك.",
+      hpF3t:"جاهزة للعميل", hpF3p:"تقارير احترافية وخطط تطوير فورًا.",
+      hpCtaKicker:"مستعد لرؤيته عمليًا؟", hpCtaH2:"شاهد روبريك يعمل<br>على إطارك الخاص.",
+      hpCtaP:"أحضر منهجيتك، وسنريك كيف يمكن أن يعمل روبريك عمليًا لفريقك.",
+      hpCtaBtn2:"أرسل إطارك",
       howKicker:"كيف تعمل",
       howH2:"إطار تقييم واحد يدخل، تقرير جاهز يخرج.",
       step1h:"حمّل إطارك", step1p:"المجالات والمعايير والأوزان ومقياس التقييم — يُبنى مرة واحدة ويُعاد استخدامه كل دورة.",
@@ -180,24 +231,33 @@
       ctaBtn1:"احجز عرضًا توضيحيًا", ctaBtn2:"أرسل إطارك",
       foot1:"روبريك — وكالة حلول ذكاء اصطناعي تبني منصات تحويل التقييم إلى تقرير لفرق الاستشارات.",
       foot2:"دراسة حالة متاحة عند الطلب.",
-      bookH3:"احجز مكالمة",
-      bookSub:"اختر وقتًا أدناه — كل الأوقات معروضة بتوقيتك المحلي.",
-      tzNote:"الأوقات معروضة بتوقيتك ({tz}). التوفر من 8:00 صباحًا حتى 1:00 صباحًا بتوقيت الرياض.",
+      bkDateTitle:"اختر التاريخ والوقت", bkTimesTitle:"الأوقات المتاحة",
+      bkPrevMonth:"الشهر السابق", bkNextMonth:"الشهر التالي",
       noSlots:"لا توجد أوقات متاحة في هذا اليوم — جرّب يومًا آخر.",
-      selectedSlotPrefix:"الوقت المختار:",
-      bookNamePh:"اسمك",
-      bookEmailPh:"بريدك الإلكتروني",
-      bookNotePh:"أي شيء تود مشاركته (اختياري)",
-      bookSendEmail:"إرسال الطلب عبر البريد",
-      bookSendWa:"إرسال الطلب عبر واتساب",
-      bookDisclaimer:"هذا يرسل طلب حجز وليس حجزًا تلقائيًا — سنؤكد لك الوقت لاحقًا.",
-      contactH3:"أو أرسل رسالة مباشرة",
-      cfNamePh:"الاسم",
-      cfEmailPh:"البريد الإلكتروني",
-      cfCompanyPh:"الجهة (اختياري)",
-      cfMessagePh:"الرسالة",
-      cfSend:"إرسال الرسالة",
-      cfNote:"سيفتح تطبيق البريد لديك مع تعبئة الرسالة مسبقًا — لن يُرسل شيء دون أن تضغط إرسال بنفسك.",
+      bkDetailsTitle:"بياناتك",
+      bkName:"الاسم الكامل", bkNamePh:"سارة أحمد",
+      bkEmail:"البريد الإلكتروني للعمل", bkEmailPh:"name@company.com",
+      bkCompany:"الجهة", bkCompanyPh:"اسم جهتك",
+      bkRole:"الدور", bkRolePh:"اختر الدور",
+      bkRole1:"شريك / مدير", bkRole2:"استشاري", bkRole3:"مدير مشروع أو برنامج", bkRole4:"مسؤول الجودة / المتابعة والتقييم", bkRole5:"أخرى",
+      bkFw:"نوع التقييم / الإطار", bkFwPh:"اختر إطارك",
+      bkFw1:"تقييم القدرات / النضج", bkFw2:"تقييم البرامج", bkFw3:"مراجعة الجودة / الاعتماد", bkFw4:"بطاقة تدقيق / امتثال", bkFw5:"تقييم القيادة / الأداء", bkFw6:"إطار آخر / مخصص",
+      bkNotes:"أخبرنا عن إطارك", bkOptional:"(اختياري)",
+      bkNotesPh:"مثلًا: المجالات الرئيسية، الهيكل، الأدوات الحالية، أو أسئلة محددة تود مناقشتها...",
+      bkUpload:"ارفع إطارك", bkDrop:"اسحب الملف هنا أو <u>تصفّح</u>", bkDropHint:"PDF أو PPT أو DOCX (حتى 10MB)",
+      bkFileType:"يرجى اختيار ملف PDF أو PPT أو DOCX.", bkFileSize:"حجم الملف يتجاوز 10MB. يرجى اختيار ملف أصغر.",
+      bkSubmit:"احجز العرض", bkNote:"ستصلك دعوة تقويم عبر البريد الإلكتروني.",
+      bkErrSlot:"يرجى اختيار التاريخ والوقت.", bkErrFields:"يرجى تعبئة جميع الحقول المطلوبة.", bkErrEmail:"يرجى إدخال بريد إلكتروني صحيح للعمل.",
+      bkDone:"سيفتح تطبيق البريد لديك الآن مع طلبك. أرسله وسنؤكد الموعد بدعوة تقويم.",
+      bkDoneFile:"سيفتح تطبيق البريد لديك الآن مع طلبك. أرفق ملف إطارك ثم أرسله، وسنؤكد الموعد بدعوة تقويم.",
+      navContact:"تواصل معنا",
+      ctTitle:"تواصل معنا", ctLede:"لديك أسئلة حول روبريك أو إطارك أو التعاون معنا؟ أرسل لنا رسالة وسنرد عليك عبر البريد الإلكتروني.",
+      ctEmailLabel:"راسلنا", ctCopyAria:"نسخ البريد الإلكتروني", ctDemoLabel:"تفضّل التحدث؟", ctDemoLink:"احجز عرضًا توضيحيًا",
+      ctFormTitle:"أرسل لنا رسالة", ctTopic:"الموضوع", ctTopicPh:"اختر الموضوع",
+      ctTopic1:"سؤال عام", ctTopic2:"الأسعار", ctTopic3:"إطاري", ctTopic4:"شراكة", ctTopic5:"أخرى",
+      ctMsg:"الرسالة", ctMsgPh:"كيف يمكننا مساعدتك؟", ctSubmit:"إرسال الرسالة", ctNote:"سنرد على بريدك الإلكتروني للعمل.",
+      ctErrFields:"يرجى إدخال اسمك والموضوع والرسالة.",
+      ctDone:"سيفتح تطبيق البريد لديك الآن مع رسالتك. أرسلها وسنعود إليك.",
       navHome:"الرئيسية", navHow:"كيف تعمل", navReport:"نموذج تقرير", navSecurity:"الأمان والثقة", navLogin:"تسجيل الدخول", navMenu:"القائمة",
       footPrivacy:"سياسة الخصوصية", footTerms:"شروط الخدمة",
       solKicker:"حالات الاستخدام", solH1:"الحلول وحالات الاستخدام",
@@ -238,8 +298,7 @@
     });
     document.getElementById('langBtnText').textContent = t.langBtn;
     try{ localStorage.setItem('miqyas-lang', lang); }catch(e){}
-    if (document.getElementById('slotGrid')) renderBooking();
-    if (typeof selectedSlot !== 'undefined' && selectedSlot) showBookForm();
+    if (document.getElementById('bkCal') && bk.tz) renderBooking();
   }
 
   /* ---------- nav: mobile menu toggle + highlight the current page ---------- */
@@ -256,33 +315,17 @@
       if (target === here && !a.classList.contains('nav-login-mobile')) a.setAttribute('aria-current', 'page');
     });
   })();
-  function copyVal(id, btn){
-    var text = document.getElementById(id).textContent;
-    var done = function(){ var o = btn.textContent; btn.textContent = '✓'; setTimeout(function(){ btn.textContent = o; }, 1200); };
-    try{
-      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
-    }catch(e){ fallbackCopy(text, done); }
-  }
-  function fallbackCopy(text, done){
-    var ta = document.createElement('textarea');
-    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.focus(); ta.select();
-    try{ document.execCommand('copy'); }catch(e){}
-    document.body.removeChild(ta);
-    done();
-  }
 
-  /* ---------- booking widget (book.html) ---------- */
+  /* ---------- booking page (book.html): month calendar, time slots, details form ----------
+     Availability: hourly slots 8 AM – 1 AM Riyadh time for the next NUM_DAYS days, at least 1 hour ahead.
+     There is no backend yet, so "Book Demo" opens a pre-filled email; the owner confirms with a calendar invite. */
   var CONTACT_EMAIL = 'adas.abdulmajeed@gmail.com';
-  var WHATSAPP_NUMBER = '966550843077';
   var RIYADH_HOURS = [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,1];
-  var NUM_DAYS = 14;
-  var selectedDayKey = null;
-  var selectedSlot = null;
-  var dayData = null;
+  var NUM_DAYS = 90;   /* how far ahead visitors can book; the month arrows go up to the last month with open times */
+  var bk = { tz: null, month: null, day: null, slot: null, file: null };
 
   function detectTZ(){
-    try{ return Intl.DateTimeFormat().resolvedOptions().timeZone || 'local time'; }catch(e){ return 'local time'; }
+    try{ return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Riyadh'; }catch(e){ return 'Asia/Riyadh'; }
   }
   function riyadhTodayYMD(){
     var shifted = new Date(Date.now() + 3*3600*1000);
@@ -302,114 +345,189 @@
     slots.sort(function(a, b){ return a - b; });
     return slots;
   }
-  function groupByLocalDay(slots){
-    var order = [];
-    var groups = {};
-    slots.forEach(function(dt){
-      var key = dt.toDateString();
-      if (!groups[key]){ groups[key] = []; order.push(key); }
-      groups[key].push(dt);
-    });
-    return { order: order, groups: groups };
-  }
-  function localeTag(){ return currentLang === 'ar' ? 'ar-SA' : 'en-US'; }
-  function dayLabel(dt){ return dt.toLocaleDateString(localeTag(), { weekday: 'short', month: 'short', day: 'numeric' }); }
-  function timeLabel(dt){ return dt.toLocaleTimeString(localeTag(), { hour: 'numeric', minute: '2-digit' }); }
   function riyadhLabel(dt){
     return dt.toLocaleString('en-US', { timeZone: 'Asia/Riyadh', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' Riyadh time';
   }
+  function bkLocale(){ return currentLang === 'ar' ? 'ar-u-ca-gregory-nu-latn' : 'en-US'; }
+  /* calendar day key (YYYY-MM-DD) of a moment in the chosen timezone */
+  function bkKey(dt, tz){ return new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(dt); }
+  function bkTzLabel(tz){
+    var off = '';
+    try{ off = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'shortOffset' }).formatToParts(new Date()).filter(function(p){ return p.type === 'timeZoneName'; })[0].value; }catch(e){}
+    return (off ? off + ' ' : '') + '(' + tz.split('/').pop().replace(/_/g, ' ') + ')';
+  }
+  function bkTime(dt){ return dt.toLocaleTimeString(bkLocale(), { timeZone: bk.tz, hour: 'numeric', minute: '2-digit' }); }
+  function bkDayLong(dt){ return dt.toLocaleDateString(bkLocale(), { timeZone: bk.tz, weekday: 'long', month: 'long', day: 'numeric' }); }
 
   function renderBooking(){
-    var tabsEl = document.getElementById('dayTabs');
-    var gridEl = document.getElementById('slotGrid');
-    var tzEl = document.getElementById('tzNote');
-    if (!tabsEl || !gridEl) return;
+    var cal = document.getElementById('bkCal');
+    if (!cal) return;
+    var t = translations[currentLang];
+    var groups = {}, order = [];
+    generateSlots().forEach(function(dt){ var k = bkKey(dt, bk.tz); if (!groups[k]){ groups[k] = []; order.push(k); } groups[k].push(dt); });
+    if (!bk.day || !groups[bk.day]){ bk.day = order[0] || null; bk.slot = null; }
+    var todayKey = bkKey(new Date(), bk.tz);
+    if (!bk.month) bk.month = (bk.day || todayKey).slice(0, 7);
+    var minMonth = todayKey.slice(0, 7), maxMonth = (order[order.length - 1] || todayKey).slice(0, 7);
+    var y = +bk.month.slice(0, 4), m = +bk.month.slice(5, 7) - 1;
+    /* when browsing to another month, select that month's first open day so the times match what's on screen */
+    if (bk.day && bk.day.slice(0, 7) !== bk.month){
+      var inMonth = order.filter(function(k){ return k.slice(0, 7) === bk.month; });
+      if (inMonth.length){ bk.day = inMonth[0]; bk.slot = null; }
+    }
 
-    var slots = generateSlots();
-    dayData = groupByLocalDay(slots);
-    if (!selectedDayKey || dayData.order.indexOf(selectedDayKey) === -1) selectedDayKey = dayData.order[0];
+    document.getElementById('bkMonthLabel').textContent = new Date(Date.UTC(y, m, 15)).toLocaleDateString(bkLocale(), { timeZone: 'UTC', month: 'long', year: 'numeric' });
+    document.getElementById('bkPrev').disabled = bk.month <= minMonth;
+    document.getElementById('bkNext').disabled = bk.month >= maxMonth;
 
-    tabsEl.innerHTML = '';
-    dayData.order.slice(0, 10).forEach(function(key){
-      var dt = dayData.groups[key][0];
+    cal.innerHTML = '';
+    for (var w = 0; w < 7; w++){
+      var head = document.createElement('span');
+      head.className = 'bk-dow';
+      head.textContent = new Date(Date.UTC(2024, 0, 7 + w)).toLocaleDateString(bkLocale(), { timeZone: 'UTC', weekday: 'short' });
+      cal.appendChild(head);
+    }
+    var first = new Date(Date.UTC(y, m, 1));
+    var start = new Date(Date.UTC(y, m, 1 - first.getUTCDay()));
+    for (var i = 0; i < 42; i++){
+      var d = new Date(start.getTime() + i * 86400000);
+      if (i >= 35 && d.getUTCMonth() !== m) break;
+      var key = d.toISOString().slice(0, 10);
+      var open = !!groups[key] && d.getUTCMonth() === m;   /* neighbouring-month days stay faded and inactive */
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'day-tab' + (key === selectedDayKey ? ' active' : '');
-      btn.textContent = dayLabel(dt);
-      btn.onclick = function(){ selectedDayKey = key; selectedSlot = null; renderBooking(); };
-      tabsEl.appendChild(btn);
-    });
+      btn.textContent = d.getUTCDate();
+      btn.className = 'bk-day' + (d.getUTCMonth() !== m ? ' other' : '') + (open ? ' open' : '') + (open && key === bk.day ? ' selected' : '');
+      if (open){
+        btn.onclick = (function(k){ return function(){ bk.day = k; bk.slot = null; renderBooking(); }; })(key);
+        btn.setAttribute('aria-pressed', key === bk.day ? 'true' : 'false');
+      } else {
+        btn.disabled = true;
+      }
+      cal.appendChild(btn);
+    }
 
-    gridEl.innerHTML = '';
-    var daySlots = (dayData.groups[selectedDayKey] || []);
-    if (daySlots.length === 0){
-      var empty = document.createElement('div');
-      empty.className = 'slot-empty';
-      empty.textContent = translations[currentLang].noSlots;
-      gridEl.appendChild(empty);
+    var slotsEl = document.getElementById('bkSlots');
+    slotsEl.innerHTML = '';
+    var daySlots = groups[bk.day] || [];
+    if (!daySlots.length){
+      var empty = document.createElement('p');
+      empty.className = 'bk-empty';
+      empty.textContent = t.noSlots;
+      slotsEl.appendChild(empty);
     }
     daySlots.forEach(function(dt){
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'slot-btn' + (selectedSlot && selectedSlot.getTime() === dt.getTime() ? ' selected' : '');
-      btn.textContent = timeLabel(dt);
-      btn.onclick = function(){ selectedSlot = dt; renderBooking(); showBookForm(); };
-      gridEl.appendChild(btn);
+      var s = document.createElement('button');
+      s.type = 'button';
+      s.className = 'bk-slot' + (bk.slot && bk.slot.getTime() === dt.getTime() ? ' selected' : '');
+      s.textContent = bkTime(dt);
+      s.setAttribute('aria-pressed', bk.slot && bk.slot.getTime() === dt.getTime() ? 'true' : 'false');
+      s.onclick = function(){ bk.slot = dt; renderBooking(); };
+      slotsEl.appendChild(s);
     });
-
-    if (tzEl) tzEl.textContent = translations[currentLang].tzNote.replace('{tz}', detectTZ());
   }
 
-  function showBookForm(){
-    var formEl = document.getElementById('bookForm');
-    var labelEl = document.getElementById('selectedSlotLabel');
-    if (!formEl || !selectedSlot) return;
-    formEl.hidden = false;
-    labelEl.textContent = translations[currentLang].selectedSlotPrefix + ' ' + dayLabel(selectedSlot) + ', ' + timeLabel(selectedSlot) + ' (' + riyadhLabel(selectedSlot) + ')';
-    formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  function bkSetFile(file){
+    var note = document.getElementById('bkFileName');
+    var t = translations[currentLang];
+    bk.file = null;
+    if (!file){ note.textContent = ''; return; }
+    if (!/\.(pdf|pptx?|docx?)$/i.test(file.name)){ note.textContent = t.bkFileType; return; }
+    if (file.size > 10 * 1024 * 1024){ note.textContent = t.bkFileSize; return; }
+    bk.file = file;
+    note.textContent = file.name + ' (' + Math.max(1, Math.round(file.size / 1024)) + ' KB)';
   }
 
-  function requestBookingEmail(){
-    if (!selectedSlot) return;
-    var name = document.getElementById('bookName').value.trim();
-    var email = document.getElementById('bookEmail').value.trim();
-    var note = document.getElementById('bookNote').value.trim();
-    var subject = 'Call request — ' + dayLabel(selectedSlot) + ' ' + timeLabel(selectedSlot);
-    var bodyLines = [
-      'Name: ' + name,
-      'Email: ' + email,
-      'Requested time (my local time, ' + detectTZ() + '): ' + dayLabel(selectedSlot) + ', ' + timeLabel(selectedSlot),
-      'Requested time (Riyadh): ' + riyadhLabel(selectedSlot),
-      '',
-      note
-    ];
-    window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-  }
+  (function(){
+    var form = document.getElementById('bkForm');
+    if (!form) return;
+    /* the visitor's own timezone is detected automatically and shown as a label (no picker) */
+    bk.tz = detectTZ();
+    document.getElementById('bkTz').textContent = bkTzLabel(bk.tz);
+    function shiftMonth(n){ var y = +bk.month.slice(0, 4), m = +bk.month.slice(5, 7) - 1 + n; bk.month = new Date(Date.UTC(y, m, 1)).toISOString().slice(0, 7); renderBooking(); }
+    document.getElementById('bkPrev').onclick = function(){ shiftMonth(-1); };
+    document.getElementById('bkNext').onclick = function(){ shiftMonth(1); };
 
-  function requestBookingWhatsapp(){
-    if (!selectedSlot) return;
-    var name = document.getElementById('bookName').value.trim();
-    var note = document.getElementById('bookNote').value.trim();
-    var lines = [
-      'Hi, I would like to book a call.',
-      'Name: ' + name,
-      'Requested time (my local time, ' + detectTZ() + '): ' + dayLabel(selectedSlot) + ', ' + timeLabel(selectedSlot),
-      'Riyadh time: ' + riyadhLabel(selectedSlot)
-    ];
-    if (note) lines.push('Note: ' + note);
-    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
-  }
+    var notes = document.getElementById('bkNotes'), count = document.getElementById('bkCount');
+    notes.oninput = function(){ count.textContent = notes.value.length + '/500'; };
 
-  function sendContactForm(){
-    var name = document.getElementById('cfName').value.trim();
-    var email = document.getElementById('cfEmail').value.trim();
-    var company = document.getElementById('cfCompany').value.trim();
-    var message = document.getElementById('cfMessage').value.trim();
-    var subject = 'Website contact — ' + (name || 'New inquiry');
-    var bodyLines = [ 'Name: ' + name, 'Email: ' + email, 'Company: ' + company, '', message ];
-    window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-  }
+    var fileInput = document.getElementById('bkFile'), drop = document.getElementById('bkDrop');
+    fileInput.onchange = function(){ bkSetFile(fileInput.files[0]); };
+    ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add('drag'); }); });
+    ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove('drag'); }); });
+    drop.addEventListener('drop', function(e){ if (e.dataTransfer && e.dataTransfer.files[0]) bkSetFile(e.dataTransfer.files[0]); });
 
+    form.onsubmit = function(e){
+      e.preventDefault();
+      var t = translations[currentLang];
+      var err = document.getElementById('bkError');
+      var val = function(id){ return document.getElementById(id).value.trim(); };
+      var missing = !val('bkName') || !val('bkCompany') || !val('bkRole') || !val('bkFramework');
+      var problem = !bk.slot ? t.bkErrSlot : missing ? t.bkErrFields : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('bkEmail')) ? t.bkErrEmail : '';
+      err.hidden = !problem;
+      err.textContent = problem;
+      if (problem) return;
+      var role = document.getElementById('bkRole'), fw = document.getElementById('bkFramework');
+      var when = bkDayLong(bk.slot) + ', ' + bkTime(bk.slot);
+      var lines = [
+        'Name: ' + val('bkName'),
+        'Work email: ' + val('bkEmail'),
+        'Company: ' + val('bkCompany'),
+        'Role: ' + role.options[role.selectedIndex].text,
+        'Assessment type / framework: ' + fw.options[fw.selectedIndex].text,
+        'Requested time (' + bkTzLabel(bk.tz) + '): ' + when,
+        'Requested time (Riyadh): ' + riyadhLabel(bk.slot),
+        '',
+        'About the framework:',
+        val('bkNotes') || '-'
+      ];
+      if (bk.file) lines.push('', 'Framework file: ' + bk.file.name + ' (please attach it to this email before sending)');
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Demo request: ' + val('bkCompany') + ', ' + when) + '&body=' + encodeURIComponent(lines.join('\n'));
+      var done = document.getElementById('bkDone');
+      done.hidden = false;
+      done.textContent = bk.file ? t.bkDoneFile : t.bkDone;
+    };
+    renderBooking();
+  })();
+
+
+  /* ---------- contact page (contact.html): message form + copy email ----------
+     No backend yet, so "Send message" validates and opens a pre-filled email to CONTACT_EMAIL. */
+  (function(){
+    var form = document.getElementById('ctForm');
+    if (!form) return;
+    var msg = document.getElementById('ctMessage'), count = document.getElementById('ctCount');
+    msg.oninput = function(){ count.textContent = msg.value.length + '/1000'; };
+    var copy = document.getElementById('ctCopy');
+    copy.onclick = function(){
+      var done = function(){ copy.classList.add('copied'); setTimeout(function(){ copy.classList.remove('copied'); }, 1400); };
+      try{ navigator.clipboard.writeText(CONTACT_EMAIL).then(done, function(){}); }catch(e){}
+    };
+    form.onsubmit = function(e){
+      e.preventDefault();
+      var t = translations[currentLang];
+      var val = function(id){ return document.getElementById(id).value.trim(); };
+      var err = document.getElementById('ctError');
+      var problem = (!val('ctName') || !val('ctTopic') || !val('ctMessage')) ? t.ctErrFields : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('ctMail')) ? t.bkErrEmail : '';
+      err.hidden = !problem;
+      err.textContent = problem;
+      if (problem) return;
+      var topic = document.getElementById('ctTopic');
+      var topicText = topic.options[topic.selectedIndex].text;
+      var lines = [
+        'Name: ' + val('ctName'),
+        'Work email: ' + val('ctMail'),
+        'Company: ' + (val('ctCompany') || '-'),
+        'Topic: ' + topicText,
+        '',
+        val('ctMessage')
+      ];
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Website message: ' + topicText + (val('ctCompany') ? ' (' + val('ctCompany') + ')' : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
+      var done = document.getElementById('ctDone');
+      done.hidden = false;
+      done.textContent = t.ctDone;
+    };
+  })();
 
   /* ---------- "Send your framework" mailto (home page CTA) ---------- */
   var sendFramework = document.getElementById('sendFramework');
