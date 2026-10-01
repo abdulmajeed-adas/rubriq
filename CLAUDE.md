@@ -31,8 +31,8 @@ and a finished, data-grounded narrative report plus an action plan comes out.
   guarded so it only runs where its elements exist).
 - Pages:
   - `index.html` (landing)
-  - `how-it-works.html` (currently the How it works section)
-  - `example-report.html` (currently the output section)
+  - `how-it-works.html` (intentionally empty since Oct 1, 2026; the owner will send new sections for it)
+  - `example-report.html` (intentionally empty since Oct 1, 2026; the owner will send new sections for it)
   - `solutions.html`
   - `security.html`
   - `book.html` (booking widget, contact form, and chips)
