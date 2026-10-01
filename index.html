@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<nav>
+<nav class="nav-over">
   <div class="wrap-wide">
-    <a class="brand" href="index.html"><img class="mark" src="images/brand/logo-icon.png" alt="Rubriq logo"><span data-i18n="brand">Rubriq</span></a>
+    <a class="brand" href="index.html"><img class="mark" src="images/brand/logo-icon.png" alt="Rubriq logo"><img class="mark mark-light" src="images/brand/logo-icon-light.png" alt=""><span data-i18n="brand">Rubriq</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-i18n="navHome">Home</a>
       <a href="how-it-works.html" data-i18n="navHow">How It Works</a>
@@ -34,30 +34,14 @@
   </div>
 </nav>
 <section class="hero">
-  <div class="wrap-wide hero-grid">
+  <img class="hero-bg" src="images/hero/hero-laptop.webp" width="1672" height="941" alt="" fetchpriority="high">
+  <div class="wrap-wide hero-inner">
     <div class="hero-copy">
-      <span class="eyebrow" data-i18n="eyebrow">Assess / Review / Report</span>
-      <h1 data-i18n="h1">Turn your<br>framework into<br><span class="hero-accent">client-ready reports.</span></h1>
-      <p class="lede" data-i18n="lede">Rubriq helps consulting teams turn structured assessments into polished reports and development plans — grounded in evidence, reviewed by consultants, and generated automatically.</p>
-      <div class="hero-feats">
-        <div class="hero-feat"><span class="hero-feat-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20V14h4v6zM10 20V9h4v11zM16 20V4h4v16z"/></svg></span><span data-i18n="heroF1">Evidence-grounded</span></div>
-        <div class="hero-feat"><span class="hero-feat-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M6.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M1.5 19c0-2.2 1.5-4 3.5-4.3M22.5 19c0-2.2-1.5-4-3.5-4.3"/></svg></span><span data-i18n="heroF2">Consultant-reviewed</span></div>
-        <div class="hero-feat"><span class="hero-feat-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span><span data-i18n="heroF3">Automated outputs</span></div>
-      </div>
+      <span class="hero-bar"></span>
+      <h1 data-i18n="h1">Clear insights<br>for a stronger<br><span class="hero-accent">tomorrow.</span></h1>
       <div class="hero-actions">
-        <a class="cta-btn primary" href="book.html"><span data-i18n="heroBtn1">Book a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
-        <a class="cta-btn outline-dark" href="#output"><span data-i18n="heroBtn2">See Example Report</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 2H6v20h12V6z"/><path d="M14 2v4h4"/></svg></a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <span class="hero-shape top"></span><span class="hero-shape right"></span><span class="hero-shape left"></span>
-      <img class="hero-report" src="images/hero/report-page.jpg" width="1536" height="1024" data-i18n-alt="heroAlt" alt="Sample generated report: the Development Impact &amp; Youth Leadership cover, domain scores, and component scores">
-      <div class="hero-plan" dir="ltr" aria-hidden="true">
-        <div class="hero-plan-head"><b>Development Plan</b><i></i></div>
-        <small>3 focus areas · 12 months</small>
-        <div class="hero-plan-item"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="m12 12 7-7M16 5h3v3"/></svg></span><div><strong>Strategic Thinking</strong><em>Build systems-level analysis skills</em></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>
-        <div class="hero-plan-item"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16.5 14.2c2.9.3 5 2.4 5 5.3"/></svg></span><div><strong>Influence &amp; Communication</strong><em>Increase executive stakeholder engagement</em></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>
-        <div class="hero-plan-item"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10c1 1 1.5 2 1.5 3h5c0-1 .5-2 1.5-3a6 6 0 0 0-4-10Z"/></svg></span><div><strong>Innovation</strong><em>Apply design thinking to key projects</em></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>
+        <a class="hero-btn" href="book.html"><span data-i18n="heroCta">Book a demo</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <a class="hero-play" href="how-it-works.html" aria-label="See how Rubriq works" data-i18n-aria="heroPlayAria"><svg width="26" height="28" viewBox="0 0 26 28" fill="currentColor"><path d="M3 2.5v23a1.5 1.5 0 0 0 2.3 1.3l18.4-11.5a1.5 1.5 0 0 0 0-2.6L5.3 1.2A1.5 1.5 0 0 0 3 2.5Z"/></svg></a>
       </div>
     </div>
   </div>

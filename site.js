@@ -6,13 +6,9 @@
       brand:"Rubriq",
       navSolutions:"Solutions",
       navCta:"Book a demo",
-      eyebrow:"Assess / Review / Report",
-      h1:"Turn your<br>framework into<br><span class=\"hero-accent\">client-ready reports.</span>",
-      lede:"Rubriq helps consulting teams turn structured assessments into polished reports and development plans — grounded in evidence, reviewed by consultants, and generated automatically.",
+      h1:"Clear insights<br>for a stronger<br><span class=\"hero-accent\">tomorrow.</span>",
+      heroCta:"Book a demo", heroPlayAria:"See how Rubriq works",
       heroBtn1:"Book a Demo",
-      heroBtn2:"See Example Report",
-      heroF1:"Evidence-grounded", heroF2:"Consultant-reviewed", heroF3:"Automated outputs",
-      heroAlt:"Sample generated report: the Development Impact & Youth Leadership cover, a 50.4% domain score, component scores, and a development plan",
       baKicker:"Before / With Rubriq",
       baH2:"Same methodology. Far less manual work.",
       baSub:"Keep your framework. Remove the spreadsheet chaos, back-and-forth emails, and manual report writing.",
@@ -141,13 +137,9 @@
       brand:"روبريك",
       navSolutions:"الحلول",
       navCta:"احجز عرضًا توضيحيًا",
-      eyebrow:"تقييم / مراجعة / تقرير",
-      h1:"حوّل إطارك<br>إلى <span class=\"hero-accent\">تقارير جاهزة للعميل.</span>",
-      lede:"يساعد روبريك فرق الاستشارات على تحويل التقييمات المنظمة إلى تقارير احترافية وخطط تطوير — مبنية على البيّنات، ويراجعها الاستشاريون، وتُولَّد تلقائيًا.",
+      h1:"رؤى واضحة<br>لغدٍ <span class=\"hero-accent\">أقوى.</span>",
+      heroCta:"احجز عرضًا توضيحيًا", heroPlayAria:"شاهد كيف يعمل روبريك",
       heroBtn1:"احجز عرضًا توضيحيًا",
-      heroBtn2:"شاهد نموذج تقرير",
-      heroF1:"مبني على البيّنات", heroF2:"بمراجعة الاستشاري", heroF3:"مخرجات مؤتمتة",
-      heroAlt:"نموذج تقرير مولّد: غلاف تقرير الأثر التنموي والقيادة الشبابية، ودرجة مجال 50.4%، ودرجات المكوّنات، وخطة تطوير",
       baKicker:"قبل / مع روبريك",
       baH2:"نفس المنهجية. عمل يدوي أقل بكثير.",
       baSub:"احتفظ بإطارك، وتخلّص من فوضى جداول البيانات والمراسلات المتكررة وكتابة التقارير يدويًا.",
@@ -305,9 +297,14 @@
   (function(){
     var nav = document.querySelector('nav');
     var toggle = document.querySelector('.nav-toggle');
+    /* home page: the menu floats transparent over the hero photo and turns solid after scrolling or when opened */
+    var solid = function(){ if (nav.classList.contains('nav-over')) nav.classList.toggle('is-solid', window.scrollY > 40 || nav.classList.contains('open')); };
+    window.addEventListener('scroll', solid, { passive: true });
+    solid();
     if (toggle) toggle.onclick = function(){
       var open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      solid();
     };
     var here = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
     Array.prototype.forEach.call(document.querySelectorAll('.nav-links a'), function(a){

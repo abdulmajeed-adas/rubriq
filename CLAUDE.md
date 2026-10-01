@@ -95,17 +95,17 @@ Typography:
 
 ## Page structure, in order
 1. **Nav**: the shared site menu (see Stack). "Home" is marked as the current page.
-2. **Hero** (redesigned Oct 1, 2026 from the owner's "Editorial SaaS Hero" mockup): two columns inside `.wrap-wide`
-   (1480px, the same width as the nav).
-   - Left: the eyebrow "Assess / Review / Report"; a Fraunces headline "Turn your framework into
-     client-ready reports." with the last phrase in copper (`.hero-accent`); a lede; 3 features with dot separators
-     (Evidence-grounded, Consultant-reviewed, Automated outputs); "Book a Demo" (`book.html`); and "See Example
-     Report" (`#output` until the Example Report page has content).
-   - Right (`.hero-visual`): the full-resolution `images/hero/report-page.jpg` as the big card, plus an HTML
-     Development Plan card (`.hero-plan`, LTR, English labels) overlapping its bottom-right, with CSS beige shapes
-     behind. The owner rejected a crop from the mockup as blurry; keep this sharp version. It bleeds 48px past the
-     container only at 1560px and above.
-   - The old scope-note line was dropped because it isn't in the mockup. Tech-only positioning still applies to copy.
+2. **Hero** (redesigned Oct 2, 2026 from the owner's "Clear Insights, Stronger Tomorrow" mockup, which they love):
+   - A full-bleed photo, `images/hero/hero-laptop.webp` (1672×941, supplied by the owner): a laptop showing the
+     report on a mountain at sunset. Dark gradients on the left and top keep the text and menu readable.
+   - Copy: a copper bar, then the Manrope (sans) headline "Clear insights / for a stronger / tomorrow." with
+     "tomorrow." in peach (`.hero-accent`). Then "Book a demo" (`book.html`, key `heroCta`) and a round play
+     button linking to `how-it-works.html`. There is no video yet.
+   - The menu on the home page only is `nav.nav-over`: fixed and transparent over the photo, with white text and the
+     white-and-copper logo `images/brand/logo-icon-light.png`. `site.js` adds `.is-solid` (the normal cream menu)
+     after 40px of scroll or when the mobile menu opens.
+   - At 960px and below, the text sits at the bottom over a stronger dark fade.
+   - Replaced the earlier report-card hero, whose `.hero-visual` and `.hero-plan` code was removed.
 3. **Before / With Rubriq** (`#compare`, `.ba-*` classes, uses its own 1480px `.ba-wrap`): a centered header, then two
    panels with a round arrow between them.
    - The left panel has 6 steps with copper arrows and a "2–3 days" bar.
