@@ -26,7 +26,29 @@ and a finished, data-grounded narrative report plus an action plan comes out.
   Ask before pushing unless the user already said to push.
 
 ## Stack
-- A single static `index.html` with inline CSS and JS. No build step, no framework.
+- A multi-page static site with no build step and no framework. Every page links **`site.css`** (all styles) and
+  **`site.js`** (all translations, `setLang`, the nav menu, and the booking, output-tab, and mailto helpers, each
+  guarded so it only runs where its elements exist).
+- Pages:
+  - `index.html` (landing)
+  - `how-it-works.html` (currently the How it works section)
+  - `example-report.html` (currently the output section)
+  - `solutions.html`
+  - `security.html`
+  - `book.html` (booking widget, contact form, and chips)
+  - `privacy.html`
+  - `terms.html`
+- Solutions, Security, Privacy, and Terms are starter pages: a heading plus "coming soon". The legal pages
+  deliberately have no invented legal text; the owner has to supply the real policy.
+- The nav and footer HTML are repeated in each page (static, no includes). **When you change the menu or footer,
+  update all 8 files.**
+  - The menu is: Home, How It Works, Example Report, Solutions, Security & Trust, then the language toggle, a
+    Login button (`href="#"` placeholder until the platform login URL exists), and Book a demo (`book.html`).
+  - The current page gets `aria-current` from `site.js`.
+  - At 1180px and below the links collapse into a ☰ dropdown. At 600px and below Login moves into the dropdown.
+  - The footer has Privacy Policy and Terms of Service links.
+- The home page keeps its How it works and output sections too; the owner may later replace the separate pages with
+  new designs.
 - Assets: `logo-icon.png` (logo glyph on a transparent background; also the favicon) and
   `rubriq-report-mockup-hq.jpg` (the report mockup; no longer shown on its own, but the hero cover crops its photo
   from it, so keep the file).
@@ -61,10 +83,7 @@ Typography:
   In Arabic those switch to Tajawal.
 
 ## Page structure, in order
-1. **Nav**: logo, center links (Product / Solutions / Pricing / Resources), globe language toggle,
-   and a "Book a call" button.
-   - The chevrons are decorative; there are no real dropdowns.
-   - Pricing points to `#contact`.
+1. **Nav**: the shared site menu (see Stack). "Home" is marked as the current page.
 2. **Hero**: a two-column grid.
    - Left: eyebrow "Assess / Analyze / Develop", the headline "Turn any rubric into a self-writing report.",
      the lede, a scope note, and two buttons.
@@ -124,11 +143,17 @@ Typography:
 8. **Final CTA + contact** (`#contact`, `.cta-*` classes, 1480px `.cta-wrap`):
    - At the top, the "Get started" CTA from the owner's mockup: the headline "See Rubriq running on your own
      framework.", a lede, and two buttons, plus the illustration crop `cta-art.jpg`.
-   - "Book a demo" scrolls to `#book`, the booking widget. "Send your framework" is a mailto; JS sets its `href`
-     from `CONTACT_EMAIL`, with a pre-filled subject and body.
-   - Below that, the existing booking widget, contact form, and email/WhatsApp chips are kept unchanged. The owner
-     still has to decide whether they stay.
+   - "Book a demo" links to `book.html`. "Send your framework" is a mailto; JS sets its `href` from
+     `CONTACT_EMAIL`, with a pre-filled subject and body.
+   - The booking widget, contact form, and chips are not on the home page. The owner wanted them on their own page.
 9. **Footer**.
+
+### book.html (the booking page, added Sept 29, 2026)
+- It has a centered heading ("Get started" / "Book a call"), then the booking widget, the "Or just send a message"
+  form, and the email/WhatsApp chips.
+- The nav "Book a demo", the hero "Book a call →", and the CTA "Book a demo" all link here.
+- Its styles and code live in `site.css` and `site.js`, like every other page.
+- On Cloudflare Pages it will also be served at `/book`.
 
 ### Restructure done (Sept 29, 2026)
 The owner rebuilt the page to exactly this order, one screenshot per section:
@@ -150,7 +175,7 @@ Removed on Sept 29, 2026: the standalone Showcase image section, "The problem", 
 along with its `ships-*.jpg` crops and the Caveat font.
 
 ## Bilingual system (EN/AR)
-- The `translations = { en: {...}, ar: {...} }` object is at the bottom of the file.
+- The `translations = { en: {...}, ar: {...} }` object is at the top of `site.js` and holds the text for every page.
 - Elements are tagged `data-i18n` (innerHTML), `data-i18n-alt` (alt text), or `data-i18n-ph` (placeholder).
 - `setLang(lang)` swaps the text, sets `dir="rtl"`, and saves the choice to localStorage under the key
   `miqyas-lang`. That key is legacy; it's harmless and can stay.
@@ -159,7 +184,7 @@ along with its `ships-*.jpg` crops and the Caveat font.
 - The decorative illustrations are locked with `dir="ltr"` so they don't mirror. Their UI labels stay in English on
   purpose.
 
-## Booking widget and contact form
+## Booking widget and contact form (on `book.html`)
 - The widget shows 14 days of hourly slots from **8 AM to 1 AM Riyadh time (UTC+3)**, converted to and grouped by
   the visitor's own timezone. It requires at least 1 hour of notice.
 - A booking opens a pre-filled **mailto** (to adas.abdulmajeed@gmail.com) or a **WhatsApp** link (+966 55 084 3077).
@@ -185,13 +210,13 @@ along with its `ships-*.jpg` crops and the Caveat font.
   once already.
 
 ## Known issues / TODO
-- Nav dropdowns are fake and there is no real pricing section.
-- The Proof button "View example report" jumps to `#output`, because no standalone example report exists yet. If a
-  real sample PDF or page is made, point the button there.
+- The Login button goes nowhere yet (`href="#"`); point it at the platform login once it exists.
+- The Proof button "View example report" links to `example-report.html`.
 - **Name risk:** rubriq.com is an existing company (an AI academic editing and peer-review tool), and the name
   sounds the same as Rubrik, a large public company. Suggested fixes: use a `.io`, `.ai`, or `.co` domain and get a
   trademark check. The domain is not bought yet.
-- Likely next steps: decide whether the booking widget and contact form stay under the Final CTA; connect Cloudflare Pages;
+- Likely next steps: confirm the live site deploys from GitHub (the owner reported it hadn't updated on the domain);
+  connect or check Cloudflare Pages;
   and buy the domain.
 
 ## Related, but a separate project
