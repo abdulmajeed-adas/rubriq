@@ -32,8 +32,9 @@
   /* ---------- nav ---------- */
   nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap-wide{display:flex;align-items:center;padding-block:14px;gap:20px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-weight:800;font-size:20px;color:var(--ink);flex:none}
-  .brand .mark{width:32px;height:32px;object-fit:contain;flex:none}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Manrope',sans-serif;font-weight:800;font-size:23px;color:var(--ink);flex:none}
+  .brand .mark{width:40px;height:40px;object-fit:contain;flex:none}
+  @media (min-width:1560px){.brand{margin-inline-start:-18px}}   /* only where the page has side margin to spare */
   .nav-links{flex:1;display:flex;justify-content:center;align-items:center;gap:32px}
   .nav-links a{display:inline-flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:var(--ink-soft);text-decoration:none}
   .nav-links a:hover{color:var(--ink)}
@@ -55,9 +56,13 @@
   .hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
   /* darkens the left so the white headline reads, and the top so the menu reads */
   .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(24,17,13,.78) 0%,rgba(24,17,13,.55) 30%,rgba(24,17,13,.12) 55%,rgba(24,17,13,0) 70%),linear-gradient(180deg,rgba(20,16,22,.45) 0%,rgba(20,16,22,0) 22%)}
-  html[dir="rtl"] .hero::before{background:linear-gradient(270deg,rgba(24,17,13,.78) 0%,rgba(24,17,13,.55) 30%,rgba(24,17,13,.12) 55%,rgba(24,17,13,0) 70%),linear-gradient(180deg,rgba(20,16,22,.45) 0%,rgba(20,16,22,0) 22%)}
   .hero-inner{width:100%}
-  .hero-copy{max-width:640px;padding-bottom:40px}
+  .hero-copy{max-width:640px;padding-bottom:40px;transform:translateY(-20px)}
+  /* shifts left by up to 60px, but only into the side margin that exists, so it never gets closer than 24px to the edge */
+  .hero-copy{transform:translate(max(-60px,min(0px,calc((1480px - 100vw) / 2 + 16px))),-20px)}
+  /* Arabic keeps the text block on the left (the laptop is on the right of the photo); only the text inside reads RTL */
+  html[dir="rtl"] .hero-inner{direction:ltr}
+  html[dir="rtl"] .hero-copy{direction:rtl;width:fit-content}
   .hero-bar{display:block;width:74px;height:4px;border-radius:2px;background:#c47544;margin-bottom:40px}
   .hero h1{font-family:'Manrope',system-ui,sans-serif;font-size:clamp(46px,5.4vw,96px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
   html[lang="ar"] .hero h1{font-family:'Tajawal',system-ui,sans-serif;font-weight:700;line-height:1.3;letter-spacing:0}
@@ -74,7 +79,9 @@
     .hero{align-items:flex-end;min-height:clamp(560px,92vh,820px);padding-block:110px 56px}
     .hero-bg{object-position:72% 50%}
     .hero::before,html[dir="rtl"] .hero::before{background:linear-gradient(0deg,rgba(24,17,13,.94) 0%,rgba(24,17,13,.8) 38%,rgba(24,17,13,.35) 62%,rgba(24,17,13,.05) 82%),linear-gradient(180deg,rgba(20,16,22,.55) 0%,rgba(20,16,22,0) 25%)}
-    .hero-copy{padding-bottom:0}
+    .hero-copy,html[dir="rtl"] .hero-copy{padding-bottom:0;transform:none}
+    html[dir="rtl"] .hero-inner{direction:rtl}
+    html[dir="rtl"] .hero-copy{width:auto}
     .hero-bar{margin-bottom:24px}
   }
   @media (max-width:520px){

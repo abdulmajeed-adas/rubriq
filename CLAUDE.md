@@ -104,7 +104,9 @@ Typography:
    - The menu on the home page only is `nav.nav-over`: fixed and transparent over the photo, with white text and the
      white-and-copper logo `images/brand/logo-icon-light.png`. `site.js` adds `.is-solid` (the normal cream menu)
      after 40px of scroll or when the mobile menu opens.
-   - At 960px and below, the text sits at the bottom over a stronger dark fade.
+   - In Arabic the text block stays on the left, because the laptop is on the right of the photo; only the text inside
+     reads RTL. On wide screens the block shifts up to 60px left into the spare side margin, and 20px up.
+   - At 960px and below, the text sits at the bottom over a stronger dark fade (Arabic is right-aligned there).
    - Replaced the earlier report-card hero, whose `.hero-visual` and `.hero-plan` code was removed.
 3. **Before / With Rubriq** (`#compare`, `.ba-*` classes, uses its own 1480px `.ba-wrap`): a centered header, then two
    panels with a round arrow between them.
