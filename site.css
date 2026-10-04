@@ -57,14 +57,14 @@
   /* darkens the left so the white headline reads, and the top so the menu reads */
   .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(24,17,13,.78) 0%,rgba(24,17,13,.55) 30%,rgba(24,17,13,.12) 55%,rgba(24,17,13,0) 70%),linear-gradient(180deg,rgba(20,16,22,.45) 0%,rgba(20,16,22,0) 22%)}
   .hero-inner{width:100%}
-  .hero-copy{max-width:640px;padding-bottom:40px;transform:translateY(-20px)}
+  .hero-copy{max-width:800px;padding-bottom:40px;transform:translateY(-20px)}
   /* shifts left by up to 60px, but only into the side margin that exists, so it never gets closer than 24px to the edge */
   .hero-copy{transform:translate(max(-60px,min(0px,calc((1480px - 100vw) / 2 + 16px))),-20px)}
   /* Arabic keeps the text block on the left (the laptop is on the right of the photo); only the text inside reads RTL */
   html[dir="rtl"] .hero-inner{direction:ltr}
   html[dir="rtl"] .hero-copy{direction:rtl;width:fit-content}
   .hero-bar{display:block;width:74px;height:4px;border-radius:2px;background:#c47544;margin-bottom:40px}
-  .hero h1{font-family:'Manrope',system-ui,sans-serif;font-size:clamp(46px,5.4vw,96px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  .hero h1{font-family:'Manrope',system-ui,sans-serif;font-size:clamp(44px,4.9vw,88px);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
   html[lang="ar"] .hero h1{font-family:'Tajawal',system-ui,sans-serif;font-weight:700;line-height:1.3;letter-spacing:0}
   .hero-accent{color:#f0c8a8}
   .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:46px}
@@ -72,7 +72,9 @@
   .hero-btn:hover{background:#b4612f}
   html[dir="rtl"] .hero-btn svg{transform:scaleX(-1)}
   .hero-play{width:82px;height:82px;flex:none;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;color:#e7a578;background:rgba(20,14,10,.18);backdrop-filter:blur(2px);transition:background .2s,border-color .2s}
-  .hero-play:hover{background:rgba(20,14,10,.4);border-color:#fff}
+  .hero-sub{margin-top:26px;max-width:25.5em;font-size:clamp(18px,1.55vw,27px);line-height:1.35;color:rgba(255,255,255,.8);text-shadow:0 1px 18px rgba(0,0,0,.3)}
+  .hero-watch{display:inline-flex;align-items:center;gap:18px;color:#fff;font-size:clamp(17px,1.3vw,22px);text-decoration:none}
+  .hero-watch:hover .hero-play{background:rgba(20,14,10,.4);border-color:#fff}
   .hero-play svg{margin-inline-start:5px}
   html[dir="rtl"] .hero-play svg{margin-inline-start:0;margin-inline-end:-5px}   /* a play symbol always points right */
   @media (max-width:960px){

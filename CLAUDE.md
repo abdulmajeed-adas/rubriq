@@ -98,9 +98,12 @@ Typography:
 2. **Hero** (redesigned Oct 2, 2026 from the owner's "Clear Insights, Stronger Tomorrow" mockup, which they love):
    - A full-bleed photo, `images/hero/hero-laptop.webp` (1672×941, supplied by the owner): a laptop showing the
      report on a mountain at sunset. Dark gradients on the left and top keep the text and menu readable.
-   - Copy: a copper bar, then the Manrope (sans) headline "Clear insights / for a stronger / tomorrow." with
-     "tomorrow." in peach (`.hero-accent`). Then "Book a demo" (`book.html`, key `heroCta`) and a round play
-     button linking to `how-it-works.html`. There is no video yet.
+   - Copy (updated Oct 2, 2026 from the "Rubriq Impact at Sunset" mockup):
+     - A copper bar, then the Manrope headline "From assessment / to real impact." with "real impact." in peach
+       (`.hero-accent`).
+     - The subtitle (`.hero-sub`, key `heroSub`).
+     - "Book a demo" (`book.html`, key `heroCta`), and a round play button labelled "See how it works"
+       (`.hero-watch`, key `heroWatch`) that links to `how-it-works.html`. There is no video yet.
    - The menu on the home page only is `nav.nav-over`: fixed and transparent over the photo, with white text and the
      white-and-copper logo `images/brand/logo-icon-light.png`. `site.js` adds `.is-solid` (the normal cream menu)
      after 40px of scroll or when the mobile menu opens.
