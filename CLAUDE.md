@@ -50,7 +50,7 @@ report plus an action plan comes out.
     `index.html#output` while the Example Report page is empty.
   - `example-report.html` (intentionally empty since Oct 1, 2026; the owner will send new sections for it)
   - `solutions.html`
-  - `security.html`
+  - `security.html` (full Security & Trust page; see the note further down)
   - `book.html` (Book a Demo: calendar booking and details form)
   - `contact.html` (Contact us: email card, a Book a demo link, and a message form; same card design as booking.
     "Send message" opens a pre-filled mailto. Topic options were written by Claude, so the owner may edit them)
@@ -219,6 +219,21 @@ along with its `ships-*.jpg` crops and the Caveat font.
   `ar` object, not just the HTML.
 - The decorative illustrations are locked with `dir="ltr"` so they don't mirror. Their UI labels stay in English on
   purpose.
+
+- **Security & Trust page (`security.html`, `.sc-*` classes; written Oct 8, 2026 from the owner's answers).** Every
+  sentence must stay true, so if the setup changes, update the page. It states this setup, which the owner committed to:
+  - Each firm gets its **own Supabase project** (database and storage), with hosting on **Cloudflare**.
+  - The hosting region is chosen per firm at setup. A Supabase project's region can't be changed later, so ask first.
+  - Email-and-password logins, with **two-factor authentication for admins and consultants**, and Microsoft/Google
+    SSO on request. Roles are Admin, Consultant, and Respondent, enforced with row-level security.
+  - Evidence files are in **private storage** and open through short-lived signed links. Backups run **daily**, so
+    every client needs the Supabase Pro plan.
+  - AI is **Anthropic Claude via the commercial API**, and client data isn't used for training. Each knowledge base is
+    used only for its own client.
+  - Export and deletion on request; an NDA is offered; staff access the platform only for setup and support.
+  - Cloudflare's SOC 2 Type II / ISO 27001 and Supabase's SOC 2 Type II are credited to those providers, never to Rubriq.
+  - Security questions go to `contact.html` until a security email exists.
+  - The same setup is a printable checklist for each new client in `_design/security-standard.svg` (local only).
 
 ## Booking logic (on `book.html`, in `site.js`)
 - Availability is unchanged: hourly slots from **8 AM to 1 AM Riyadh time (UTC+3)** for the next 90 days (`NUM_DAYS`), with at
