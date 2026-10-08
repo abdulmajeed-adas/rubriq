@@ -3,9 +3,20 @@
 Handoff notes from the first build session (Sept 26–28, 2026).
 
 ## What this is
-Marketing site for **Rubriq** (Arabic: روبريك), an **AI solutions agency** that builds automated
-assessment-to-report platforms for consulting practices. The pitch: a consultant's rubric/framework goes in,
-and a finished, data-grounded narrative report plus an action plan comes out.
+Marketing site for **Rubriq** (Arabic: روبريك). Rubriq **builds and runs a dedicated assessment-to-report platform
+for each consulting firm**. The pitch: a firm's rubric/framework goes in, and a finished, data-grounded narrative
+report plus an action plan comes out.
+
+- **Core message (decided Oct 8, 2026): "We build and run your own assessment platform."** It is not one shared SaaS
+  that everyone logs into, and it is not "an agency". Each client gets their own platform, built around their
+  framework, brand, knowledge base, and reporting voice, and Rubriq builds, launches, and runs it.
+  - Copy should repeat three ideas: it's theirs (dedicated, on their methodology and voice); we build and run it
+    (no setup or IT work for them); and it runs on a proven engine (the live deployment), so custom doesn't mean slow
+    or risky.
+  - Wording to use: "your own platform", "built around your framework", "we build / we run". Avoid "AI solutions
+    agency", "one integrated platform", or anything that sounds like a self-serve tool.
+  - The menu says "Client login", because each client logs into their own platform. The Proof section frames the
+    youth-network deployment as "one client's platform".
 
 - **Positioning is tech-only.** We build and run the platform; the client's team does the assessing and makes
   the judgment calls. Don't write copy that implies Rubriq does consulting work. The owner asked for this explicitly.
@@ -98,8 +109,8 @@ Typography:
 2. **Hero** (redesigned Oct 2, 2026 from the owner's "Clear Insights, Stronger Tomorrow" mockup, which they love):
    - A full-bleed photo, `images/hero/hero-laptop.webp` (1672×941, supplied by the owner): a laptop showing the
      report on a mountain at sunset. Dark gradients on the left and top keep the text and menu readable.
-   - Copy (updated Oct 2, 2026 from the "Rubriq Impact at Sunset" mockup):
-     - A copper bar, then the Manrope headline "From assessment / to real impact." with "real impact." in peach
+   - Copy (layout from the "Rubriq Impact at Sunset" mockup; headline changed Oct 8, 2026 to match the new positioning):
+     - A copper bar, then the Manrope headline "Your methodology. / Your own platform." with "Your own platform." in peach
        (`.hero-accent`).
      - The subtitle (`.hero-sub`, key `heroSub`).
      - "Book a demo" (`book.html`, key `heroCta`), and a round play button labelled "See how it works"
