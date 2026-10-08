@@ -107,9 +107,9 @@ Typography:
 ## Page structure, in order
 1. **Nav**: the shared site menu (see Stack). "Home" is marked as the current page.
 2. **Hero** (redesigned Oct 2, 2026 from the owner's "Clear Insights, Stronger Tomorrow" mockup, which they love):
-   - A full-bleed photo, `images/hero/hero-laptop.webp` (1672×941, supplied by the owner; replaced Oct 8, 2026 with a
-     version where the laptop sits far right and the sun is out of frame; the previous photo is in
-     `_design/mockups/old/`): a laptop showing the
+   - A full-bleed photo, `images/hero/hero-laptop.webp` (1672×886, supplied by the owner on Oct 8, 2026, with the laptop
+     further right. Earlier versions are kept in `_design/mockups/old/`: `hero-laptop-first-sunset.webp` and
+     `hero-laptop-golden-hour.webp`): a laptop showing the
      report on a mountain at sunset. Dark gradients on the left and top keep the text and menu readable.
    - Copy (layout from the "Rubriq Impact at Sunset" mockup; headline changed Oct 8, 2026 to match the new positioning):
      - A copper bar, then the Manrope headline "Your methodology. / Your own platform." with "Your own platform." in peach
@@ -121,9 +121,9 @@ Typography:
      white-and-copper logo `images/brand/logo-icon-light.png`. `site.js` adds `.is-solid` (the normal cream menu)
      after 40px of scroll or when the mobile menu opens.
    - In Arabic the text block stays on the left, because the laptop is on the right of the photo; only the text inside
-     reads RTL. On wide screens the block shifts up to 60px left into the spare side margin, and 20px up.
+     reads RTL. On wide screens the block shifts up to 70px left into the spare side margin, and 40px up.
    - At 960px and below, the text sits at the bottom over a stronger dark fade (Arabic is right-aligned there). At 600px
-     and below the photo becomes a square band at the top, focused on the laptop, that fades into the dark
+     and below the photo becomes a square band at the top, focused on the laptop (`object-position:80%`), that fades into the dark
      background, with the text underneath.
    - Replaced the earlier report-card hero, whose `.hero-visual` and `.hero-plan` code was removed.
 3. **Before / With Rubriq** (`#compare`, `.ba-*` classes, uses its own 1480px `.ba-wrap`): a centered header, then two
