@@ -53,7 +53,7 @@
   .cta-btn.outline-dark svg{color:#c0643a}
   .cta-btn.outline-dark:hover{border-color:#c0643a}
   .hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:clamp(620px,100vh,940px);padding-block:120px 80px;background:#2a1d16}
-  .hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+  .hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:62% 50%;transform:scale(1.1);transform-origin:62% 50%}   /* zoomed in 10% (owner, Oct 8, 2026) */
   /* darkens the left so the white headline reads, and the top so the menu reads */
   .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(24,17,13,.78) 0%,rgba(24,17,13,.55) 30%,rgba(24,17,13,.12) 55%,rgba(24,17,13,0) 70%),linear-gradient(180deg,rgba(20,16,22,.45) 0%,rgba(20,16,22,0) 22%)}
   .hero-inner{width:100%}
@@ -79,7 +79,7 @@
   html[dir="rtl"] .hero-play svg{margin-inline-start:0;margin-inline-end:-5px}   /* a play symbol always points right */
   @media (max-width:960px){
     .hero{align-items:flex-end;min-height:clamp(560px,92vh,820px);padding-block:110px 56px}
-    .hero-bg{object-position:72% 50%}
+    .hero-bg{object-position:82% 50%}
     .hero::before,html[dir="rtl"] .hero::before{background:linear-gradient(0deg,rgba(24,17,13,.94) 0%,rgba(24,17,13,.8) 38%,rgba(24,17,13,.35) 62%,rgba(24,17,13,.05) 82%),linear-gradient(180deg,rgba(20,16,22,.55) 0%,rgba(20,16,22,0) 25%)}
     .hero-copy,html[dir="rtl"] .hero-copy{padding-bottom:0;transform:none}
     html[dir="rtl"] .hero-inner{direction:rtl}
@@ -89,6 +89,13 @@
   @media (max-width:520px){
     .hero-btn{padding:17px 30px}
     .hero-play{width:64px;height:64px}
+  }
+  /* phones: the photo becomes a band across the top (laptop visible), fading into the dark background, with the text below it */
+  @media (max-width:600px){
+    .hero{display:block;min-height:0;padding:0 0 52px}
+    .hero-bg{position:relative;inset:auto;display:block;height:auto;aspect-ratio:1/1;object-position:84% 50%;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent);mask-image:linear-gradient(180deg,#000 62%,transparent);transform:none}
+    .hero::before,html[dir="rtl"] .hero::before{background:linear-gradient(180deg,rgba(20,16,22,.5) 0%,rgba(20,16,22,0) 18%,rgba(42,29,22,0) 40%,#2a1d16 60%)}
+    .hero-inner{margin-top:-64px;position:relative}
   }
 
   /* home page: the menu sits transparent over the hero photo, then turns solid once you scroll or open the menu */
